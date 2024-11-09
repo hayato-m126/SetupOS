@@ -1,5 +1,9 @@
-- name: Install foxglove
+- name: download lichtblick deb
+  ansible.builtin.get_url:
+    url: https://github.com/Lichtblick-Suite/lichtblick/releases/download/v1.7.0/lichtblick-1.7.0-linux-amd64.deb
+    dest: /tmp/lichtblick.deb
+
+- name: Install lichtblick deb package
   become: yes
-  community.general.snap:
-    name:
-      - foxglove-studio
+  ansible.builtin.apt:
+    deb: /tmp/lichtblick.deb
