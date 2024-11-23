@@ -29,3 +29,6 @@
 
 - name: install javascript package manage pnpm
   ansible.builtin.shell: curl -fsSL https://get.pnpm.io/install.sh | sh -
+
+- name: install dotenvx
+  ansible.builtin.shell: curl -fsS "https://dotenvx.sh?directory=$HOME/.local/bin/" | sh
