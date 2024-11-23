@@ -35,6 +35,7 @@
     - google-japanese-ime
     - podman-desktop
     - keeweb
+    - db-browser-for-sqlite
     # - google-chrome
 
 - name: install fisher
