@@ -32,3 +32,16 @@
 
 - name: install dotenvx
   ansible.builtin.shell: curl -fsS "https://dotenvx.sh?directory=$HOME/.local/bin/" | sh
+
+
+- name: add dbeaver ppa
+  become: yes
+  ansible.builtin.apt_repository:
+    repo: ppa:serge-rider/dbeaver-ce
+    state: present
+
+- name: install dbeaver
+  become: yes
+  ansible.builtin.apt:
+    name: dbeaver
+    update_cache: yes
