@@ -4,3 +4,5 @@
     name:
       - podman
     update_cache: yes
+
+# add nvidia container toolkit
