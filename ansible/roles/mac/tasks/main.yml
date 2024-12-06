@@ -22,6 +22,9 @@
     - fzf
     - fish
     - ripgrep
+    - orbstack
+    - postgresql
+    - openssl
 
 - name: install homebrew cask packages
   community.general.homebrew_cask:
