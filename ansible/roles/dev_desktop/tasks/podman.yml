@@ -6,3 +6,16 @@
     update_cache: yes
 
 # add nvidia container toolkit
+
+- name: update podman settings 1/2
+  become: yes
+  ansible.builtin.lineinfile:
+    path: /etc/containers/registries.conf
+    regexp: ^unqualified-search-registries
+    line: unqualified-search-registries = ["docker.io"]
+
+- name: update podman settings 2/2
+  ansible.builtin.lineinfile:
+    path: /etc/containers/registries.conf
+    line: short-name-mode = "permissive"
+    create: yes
