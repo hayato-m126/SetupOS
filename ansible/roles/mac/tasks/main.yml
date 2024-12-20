@@ -12,19 +12,20 @@
     name: '{{ item }}'
     state: present
   with_items:
+    - fish
+    - fzf
     - git
     - git-lfs
     - jq
+    - ncdu
+    - openssl
+    - orbstack
+    - postgresql
+    - ripgrep
     - tree
     - wget
     - yq
     - zstd
-    - fzf
-    - fish
-    - ripgrep
-    - orbstack
-    - postgresql
-    - openssl
 
 - name: install homebrew cask packages
   community.general.homebrew_cask:
@@ -32,13 +33,13 @@
     state: present
     install_options: 'appdir=/Applications'
   with_items:
+    - db-browser-for-sqlite
+    - google-japanese-ime
+    - keeweb
     - microsoft-edge
+    - podman-desktop
     - thunderbird
     - visual-studio-code
-    - google-japanese-ime
-    - podman-desktop
-    - keeweb
-    - db-browser-for-sqlite
     # - google-chrome
 
 - name: install fisher
