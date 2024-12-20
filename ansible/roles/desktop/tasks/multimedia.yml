@@ -4,8 +4,8 @@
   ansible.builtin.apt:
     name:
       - flameshot
-      - vlc
       - kolourpaint
-      - obs-studio
       - libxcb-cursor0 # calibre dependency
+      - obs-studio
+      - vlc
     update_cache: yes
