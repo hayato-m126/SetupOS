@@ -169,6 +169,9 @@ uid           [  不明  ] Ubuntu Archive Automatic Signing Key (2018) <ftpmaste
 ❯ sudo apt-key export '0C4ECFEC' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/ubuntu-ja-archive.gpg
 ❯ sudo apt-key export '6DC33CA5' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/fish-shell-old.gpg
 ❯ sudo apt-key export 'E2BB48DA' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/fish-shell-new.gpg
+❯ sudo apt-key export '3F055C03' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/grub-customizer.gpg
+❯ sudo apt-key export '0EBFCD88' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg
+
 
 ❯ sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.backup
 ❯ sudo rm /etc/apt/trusted.gpg
