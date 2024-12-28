@@ -126,3 +126,52 @@ W: http://archive.ubuntulinux.jp/ubuntu-ja-non-free/dists/jammy/InRelease: Key i
 W: https://ppa.launchpadcontent.net/danielrichter2007/grub-customizer/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
 W: https://ppa.launchpadcontent.net/fish-shell/release-3/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
 ```
+
+## Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details
+
+キーを調べて、変換することで修正する
+
+```shell
+❯ sudo apt-key list
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+/etc/apt/trusted.gpg
+--------------------
+pub   rsa1024 2009-04-05 [SC]
+      5967 6CBC F5DF D8C1 CEFE  375B 68B5 F60D CDC1 D865
+uid           [  不明  ] Launchpad PPA for Ubuntu Japanese Team
+
+pub   dsa1024 2005-05-24 [SC]
+      3B59 3C7B E6DB 6A89 FB7C  BFFD 058A 05E9 0C4E CFEC
+uid           [  不明  ] Ubuntu-ja Archive Automatic Signing Key <archive@ubuntulinux.jp>
+sub   elg2048 2005-05-24 [E]
+
+pub   rsa1024 2013-08-21 [SC]
+      59FD A1CE 1B84 B3FA D893  66C0 2755 7F05 6DC3 3CA5
+uid           [  不明  ] Launchpad PPA for Fish shell maintainers
+
+pub   rsa4096 2024-05-03 [SC]
+      8842 1E70 3EDC 7AF5 4967  DED4 73C9 FCC9 E2BB 48DA
+uid           [  不明  ] Launchpad PPA for Fish shell maintainers
+
+/etc/apt/trusted.gpg.d/ubuntu-keyring-2012-cdimage.gpg
+------------------------------------------------------
+pub   rsa4096 2012-05-11 [SC]
+      8439 38DF 228D 22F7 B374  2BC0 D94A A3F0 EFE2 1092
+uid           [  不明  ] Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>
+
+/etc/apt/trusted.gpg.d/ubuntu-keyring-2018-archive.gpg
+------------------------------------------------------
+pub   rsa4096 2018-09-17 [SC]
+      F6EC B376 2474 EDA9 D21B  7022 8719 20D1 991B C93C
+uid           [  不明  ] Ubuntu Archive Automatic Signing Key (2018) <ftpmaster@ubuntu.com>
+
+❯ sudo apt-key export 'CDC1D865' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/ubuntu-jp-team.gpg
+❯ sudo apt-key export '0C4ECFEC' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/ubuntu-ja-archive.gpg
+❯ sudo apt-key export '6DC33CA5' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/fish-shell-old.gpg
+❯ sudo apt-key export 'E2BB48DA' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/fish-shell-new.gpg
+
+❯ sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.backup
+❯ sudo rm /etc/apt/trusted.gpg
+
+❯ sudo apt update
+```
