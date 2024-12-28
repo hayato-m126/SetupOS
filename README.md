@@ -38,7 +38,3 @@ sudo apt install usb-creator-gtk
 session already running　と出る。
 
 <https://askubuntu.com/questions/1516121/cant-login-session-already-running>
-
-### shell
-
-fishを設定するとbashに戻れない
