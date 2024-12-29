@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "charliermarsh.ruff",
+    "bierner.markdown-mermaid",
+    "bpruitt-goddard.mermaid-markdown-syntax-highlighting"
+  ],
+  "unwantedRecommendations": [
+    "ms-python.isort",
+    "ms-python.black-formatter",
+    "ms-python.flake8"
+  ]
+}
