@@ -1,4 +1,3 @@
----
 - name: copy font conf
   become: true
   ansible.builtin.copy:

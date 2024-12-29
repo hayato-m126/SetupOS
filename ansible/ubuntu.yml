@@ -1,4 +1,3 @@
----
 - name: setup local machine
   hosts: localhost
   connection: local
@@ -9,7 +8,7 @@
     - name: prompt_dev
       prompt: Is target environment for development? [y/N]
       private: false
-      default: "y"
+      default: y
     - name: prompt_remote
       prompt: Set up remote tools? [y/N]
       private: false

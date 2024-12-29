@@ -1,4 +1,3 @@
----
 - name: download chrome-remote-desktop deb
   ansible.builtin.get_url:
     # CRD 125 seems not working https://askubuntu.com/questions/1512423/chrome-remote-desktop-in-24-04
