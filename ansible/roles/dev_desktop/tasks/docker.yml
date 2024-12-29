@@ -1,6 +1,6 @@
 ---
 - name: install docker build dependencies
-  become: yes
+  become: true
   ansible.builtin.apt:
     name:
       - apt-transport-https
@@ -8,31 +8,31 @@
       - curl
       - gnupg
       - lsb-release
-    update_cache: yes
+    update_cache: true
 
 - name: add docker apt key
-  become: yes
+  become: true
   ansible.builtin.apt_key:
-    url: 'https://download.docker.com/linux/ubuntu/gpg'
+    url: "https://download.docker.com/linux/ubuntu/gpg"
     state: present
 
 - name: add docker repository
-  become: yes
+  become: true
   ansible.builtin.apt_repository:
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_facts['distribution_release'] }} stable"
 
 - name: install docker
-  become: yes
+  become: true
   ansible.builtin.apt:
     name:
       - docker-ce
       - docker-ce-cli
       - containerd.io
       - docker-compose-plugin
-    update_cache: yes
+    update_cache: true
 
 - name: add {{ ansible_facts['user_id'] }} to docker group
-  become: yes
+  become: true
   ansible.builtin.user:
     name: "{{ ansible_facts['user_id'] }}"
     groups: docker

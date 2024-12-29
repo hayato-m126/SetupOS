@@ -6,6 +6,6 @@
     dest: /tmp/chrome-remote-desktop.deb
 
 - name: Install chrome-remote-desktop deb package
-  become: yes
+  become: true
   ansible.builtin.apt:
     deb: /tmp/chrome-remote-desktop.deb

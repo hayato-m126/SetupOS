@@ -27,4 +27,3 @@
       when: prompt_dev == 'y' and prompt_wsl != 'y'
     - role: remote
       when: prompt_remote == 'y'
-

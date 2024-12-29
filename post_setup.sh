@@ -17,4 +17,3 @@ if [ "$answer" == "y" ]; then
 else
     echo "cancel"
 fi
-

@@ -5,11 +5,11 @@
 
 - name: update homebrew
   community.general.homebrew:
-    update_homebrew: yes
+    update_homebrew: true
 
 - name: brew install
   community.general.homebrew:
-    name: '{{ item }}'
+    name: "{{ item }}"
     state: present
   with_items:
     - fish
@@ -29,9 +29,9 @@
 
 - name: install homebrew cask packages
   community.general.homebrew_cask:
-    name: '{{ item }}'
+    name: "{{ item }}"
     state: present
-    install_options: 'appdir=/Applications'
+    install_options: appdir=/Applications
   with_items:
     - db-browser-for-sqlite
     - google-japanese-ime
