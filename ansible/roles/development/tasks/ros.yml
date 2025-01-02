@@ -4,6 +4,6 @@
     dest: /tmp/lichtblick.deb
 
 - name: Install lichtblick deb package
-  become: yes
+  become: true
   ansible.builtin.apt:
     deb: /tmp/lichtblick.deb

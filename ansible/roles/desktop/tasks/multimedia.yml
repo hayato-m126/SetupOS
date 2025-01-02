@@ -1,6 +1,5 @@
----
 - name: install multimedia applications using apt
-  become: yes
+  become: true
   ansible.builtin.apt:
     name:
       - flameshot
@@ -8,4 +7,4 @@
       - libxcb-cursor0 # calibre dependency
       - obs-studio
       - vlc
-    update_cache: yes
+    update_cache: true
