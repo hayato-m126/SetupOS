@@ -7,7 +7,7 @@ else
     echo "$HOME/.ssh/github_rsa not found"
 fi
 
-echo "Do you want install python cli tools using uv? (y/n) answer:"
+echo "Do you want install python cli tools using uv? (y/n)"
 read -r answer
 
 if [ "$answer" == "y" ]; then
