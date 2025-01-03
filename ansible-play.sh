@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH="$HOME/.local/bin"
+
 # export .env
 set -o allexport
 # shellcheck disable=SC1091
