@@ -12,6 +12,3 @@ if ! (command -v ansible-playbook >/dev/null 2>&1); then
     uv tool install ansible-core
     ansible-galaxy collection install community.general
 fi
-
-ENV_JSON=env.json
-ansible-playbook ansible/ubuntu.yml --ask-become-pass -e @${ENV_JSON}
