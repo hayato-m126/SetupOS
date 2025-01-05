@@ -26,7 +26,7 @@ sudo apt install usb-creator-gtk
 事前にgithub_rsaをコピーしておく
 
 ```shell
-./setup-localhost.sh
+./setup.sh
 ```
 
 ## known issue for 24.04
