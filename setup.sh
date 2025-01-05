@@ -9,19 +9,19 @@ set +o allexport
 PLAYBOOK="ansible/ubuntu.yml"
 
 if [[ $OSTYPE == 'darwin'* ]]; then
-  PLAYBOOK="ansible/mac.yml"
-  if ! (command -v brew >/dev/null 2>&1); then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  fi
+    PLAYBOOK="ansible/mac.yml"
+    if ! (command -v brew >/dev/null 2>&1); then
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    fi
 elif [[ $OSTYPE == 'linux'* ]]; then
-  if ! (command -v curl >/dev/null 2>&1); then
-    sudo apt -y update
-    sudo apt -y install curl
-  fi
+    if ! (command -v curl >/dev/null 2>&1); then
+        sudo apt -y update
+        sudo apt -y install curl
+    fi
 else
-  echo "This OS is not supported"
-  exit 1
+    echo "This OS is not supported"
+    exit 1
 fi
 
 if ! (command -v uv >/dev/null 2>&1); then
