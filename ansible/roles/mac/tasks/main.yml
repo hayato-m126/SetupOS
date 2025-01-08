@@ -40,6 +40,7 @@
     - podman-desktop
     - thunderbird
     - visual-studio-code
+    - ghostty
     # - google-chrome
 
 - name: install fisher
