@@ -1,0 +1,5 @@
+- name: install fisher
+  ansible.builtin.shell: curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+  args:
+    executable: /bin/fish
+
