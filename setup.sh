@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -p $HOME/.ansible
+mkdir -p $HOME/.ansible/tmp
 
 # export .env
 set -o allexport
