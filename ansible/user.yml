@@ -1,0 +1,5 @@
+- name: setup normal user
+  hosts: localhost
+  connection: local
+  roles:
+    - role: user
