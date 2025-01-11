@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir -p $HOME/.ansible
+
 # export .env
 set -o allexport
 # shellcheck disable=SC1091

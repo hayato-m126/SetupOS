@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir -p $HOME/.ansible
 PLAYBOOK="ansible/user.yml"
 
 if ! (command -v uv >/dev/null 2>&1); then
