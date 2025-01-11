@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -p $HOME/.ansible
+mkdir -p $HOME/.ansible/tmp
 PLAYBOOK="ansible/user.yml"
 
 if ! (command -v uv >/dev/null 2>&1); then
