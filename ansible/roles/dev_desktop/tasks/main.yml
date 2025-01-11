@@ -1,2 +1,5 @@
 - import_tasks: vscode.yml
-# - import_tasks: docker.yml
+- import_tasks: docker.yml
+  when: ansible_facts['distribution_release'] == 'jammy'
+- import_tasks: podman.yml
+  when: ansible_facts['distribution_release'] == 'noble'
