@@ -41,6 +41,7 @@
     - thunderbird
     - visual-studio-code
     - ghostty
+    - arc
     # - google-chrome
 
 - name: install fisher
