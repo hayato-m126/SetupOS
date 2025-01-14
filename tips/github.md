@@ -7,13 +7,13 @@ githubのアカウントを作ってsshでgit pushするまでの手順
 ### github のウェブページでの操作
 
 - github アカウント作成する
-　- https://github.com/
+  　- <https://github.com/>
 - メアドを非公開にする
-  - https://github.com/settings/emails
+  - <https://github.com/settings/emails>
 - 2FA設定
-  - https://github.com/settings/security
+  - <https://github.com/settings/security>
 - ssh key登録
-  - https://github.com/settings/keys
+  - <https://github.com/settings/keys>
 
 ### ローカル操作
 
@@ -28,7 +28,7 @@ git config --global user.email "noreply mail address"
 - ssh key作成
 
 ```shell
-ssh-keygen -t ed25519 -f .ssh/github_ed25519 -C "account mail address" 
+ssh-keygen -t ed25519 -f .ssh/github_ed25519 -C "account mail address"
 ```
 
 - sshのconfig設定
