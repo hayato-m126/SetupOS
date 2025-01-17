@@ -42,6 +42,7 @@
     - visual-studio-code
     - ghostty
     - arc
+    - discord
     # - google-chrome
 
 - name: install fisher
