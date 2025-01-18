@@ -145,31 +145,33 @@ pub   dsa1024 2005-05-24 [SC]
 uid           [  不明  ] Ubuntu-ja Archive Automatic Signing Key <archive@ubuntulinux.jp>
 sub   elg2048 2005-05-24 [E]
 
-pub   rsa1024 2013-08-21 [SC]
-      59FD A1CE 1B84 B3FA D893  66C0 2755 7F05 6DC3 3CA5
-uid           [  不明  ] Launchpad PPA for Fish shell maintainers
-
 pub   rsa4096 2024-05-03 [SC]
       8842 1E70 3EDC 7AF5 4967  DED4 73C9 FCC9 E2BB 48DA
 uid           [  不明  ] Launchpad PPA for Fish shell maintainers
 
-/etc/apt/trusted.gpg.d/ubuntu-keyring-2012-cdimage.gpg
-------------------------------------------------------
-pub   rsa4096 2012-05-11 [SC]
-      8439 38DF 228D 22F7 B374  2BC0 D94A A3F0 EFE2 1092
-uid           [  不明  ] Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>
+pub   rsa4096 2024-05-02 [SC]
+      7EDB 2B9A EE07 57D7 87DF  FC20 14BE BC73 63BD C51E
+uid           [  不明  ] Launchpad PPA for Daniel Richter
 
-/etc/apt/trusted.gpg.d/ubuntu-keyring-2018-archive.gpg
-------------------------------------------------------
-pub   rsa4096 2018-09-17 [SC]
-      F6EC B376 2474 EDA9 D21B  7022 8719 20D1 991B C93C
-uid           [  不明  ] Ubuntu Archive Automatic Signing Key (2018) <ftpmaster@ubuntu.com>
+pub   dsa1024 2007-03-08 [SC]
+      4CCA 1EAF 950C EE4A B839  76DC A040 830F 7FAC 5991
+uid           [  不明  ] Google, Inc. Linux Package Signing Key <linux-packages-keymaster@google.com>
+sub   elg2048 2007-03-08 [E]
+
+pub   rsa2048 2015-10-28 [SC]
+      BC52 8686 B50D 79E3 39D3  721C EB3E 94AD BE12 29CF
+uid           [  不明  ] Microsoft (Release signing) <gpgsecurity@microsoft.com>
+
+pub   rsa4096 2017-02-22 [SCEA]
+      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+uid           [  不明  ] Docker Release (CE deb) <docker@docker.com>
+sub   rsa4096 2017-02-22 [S]
+
 
 ❯ sudo apt-key export 'CDC1D865' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/ubuntu-jp-team.gpg
 ❯ sudo apt-key export '0C4ECFEC' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/ubuntu-ja-archive.gpg
-❯ sudo apt-key export '6DC33CA5' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/fish-shell-old.gpg
-❯ sudo apt-key export 'E2BB48DA' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/fish-shell-new.gpg
-❯ sudo apt-key export '3F055C03' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/grub-customizer.gpg
+❯ sudo apt-key export 'E2BB48DA' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/fish-shell.gpg
+❯ sudo apt-key export '63BDC51E' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/grub-customizer.gpg
 ❯ sudo apt-key export '0EBFCD88' | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg
 
 
