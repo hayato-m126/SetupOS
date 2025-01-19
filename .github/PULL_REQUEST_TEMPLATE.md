@@ -8,6 +8,4 @@
 
 ## How to review this PR
 
-All required checks by github actions have been passed.
-
 ## Others

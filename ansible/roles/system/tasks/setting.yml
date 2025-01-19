@@ -1,0 +1,2 @@
+- name: use English folder name
+  ansible.builtin.shell: LANG=C xdg-user-dirs-update --force
