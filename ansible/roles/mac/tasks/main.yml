@@ -24,7 +24,6 @@
     - ripgrep
     - tree
     - wget
-    - yq
     - zstd
 
 - name: install homebrew cask packages
