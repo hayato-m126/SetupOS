@@ -7,6 +7,7 @@
       - exfatprogs
       - gparted
       - hardinfo
+      - keepassxc
       - linux-generic-hwe-{{ ansible_facts['distribution_version'] }}
       - meld
       - thunderbird-locale-ja

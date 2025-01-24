@@ -34,7 +34,6 @@
   with_items:
     - db-browser-for-sqlite
     - google-japanese-ime
-    - keeweb
     - microsoft-edge
     - podman-desktop
     - thunderbird

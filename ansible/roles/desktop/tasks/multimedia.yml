@@ -8,3 +8,4 @@
       - obs-studio
       - vlc
     update_cache: true
+sudo apt install keepassxc
