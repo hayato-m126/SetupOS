@@ -57,6 +57,7 @@
     "nsswitch",
     "orbstack",
     "packagekitd",
+    "phoerious",
     "pipx",
     "pytest",
     "rerunfailures",

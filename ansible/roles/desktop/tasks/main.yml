@@ -7,7 +7,6 @@
       - exfatprogs
       - gparted
       - hardinfo
-      - keepassxc
       - linux-generic-hwe-{{ ansible_facts['distribution_version'] }}
       - meld
       - thunderbird-locale-ja
@@ -25,6 +24,18 @@
   become: true
   ansible.builtin.apt:
     name: grub-customizer
+    update_cache: true
+
+- name: add keepassxc ppa
+  become: true
+  ansible.builtin.apt_repository:
+    repo: ppa:phoerious/keepassxc
+    state: present
+
+- name: install keepassxc
+  become: true
+  ansible.builtin.apt:
+    name: keepassxc
     update_cache: true
 
 - name: disable sleep when close note pc display
