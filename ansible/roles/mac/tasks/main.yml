@@ -32,16 +32,15 @@
     state: present
     install_options: appdir=/Applications
   with_items:
+    - arc
     - db-browser-for-sqlite
+    - discord
+    - ghostty
     - google-japanese-ime
+    - keepassxc
     - microsoft-edge
-    - podman-desktop
     - thunderbird
     - visual-studio-code
-    - ghostty
-    - arc
-    - discord
-    # - google-chrome
 
 - name: install fisher
   ansible.builtin.shell: curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
