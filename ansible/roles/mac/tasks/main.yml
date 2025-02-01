@@ -16,6 +16,7 @@
     - fzf
     - git
     - git-lfs
+    - htop
     - jq
     - ncdu
     - openssl
