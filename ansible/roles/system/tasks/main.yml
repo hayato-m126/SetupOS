@@ -2,6 +2,7 @@
   become: true
   ansible.builtin.apt:
     name:
+      - gufw
       - htop
       - net-tools
       - ncdu
