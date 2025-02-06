@@ -33,7 +33,6 @@
     state: present
     install_options: appdir=/Applications
   with_items:
-    - arc
     - db-browser-for-sqlite
     - discord
     - ghostty
@@ -42,6 +41,7 @@
     - microsoft-edge
     - thunderbird
     - visual-studio-code
+    - zen-browser
 
 - name: install fisher
   ansible.builtin.shell: curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
