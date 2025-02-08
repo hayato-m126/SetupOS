@@ -33,7 +33,6 @@
     state: present
     install_options: appdir=/Applications
   with_items:
-    - db-browser-for-sqlite
     - discord
     - ghostty
     - google-japanese-ime
