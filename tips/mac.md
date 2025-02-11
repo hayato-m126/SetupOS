@@ -9,3 +9,14 @@ macのtips
 ```shell
 sudo nvram BootPreference=%00
 ```
+
+## キーボードの配置を入れ替えてwindowsの操作感に近づける
+
+設定 -> キーボード -> キーボードショートカット -> 修飾キー
+
+- Caps Lock -> Command
+- Control -> Caps Lock
+- Option -> Control
+- Command -> Optionß
+
+![key_remap](./pic/key_remap.png)
