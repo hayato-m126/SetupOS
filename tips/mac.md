@@ -20,3 +20,7 @@ sudo nvram BootPreference=%00
 - Command -> Optionß
 
 ![key_remap](./pic/key_remap.png)
+
+## 設定変更
+
+<https://dev.classmethod.jp/articles/mac-recommended-initial-settings/>
