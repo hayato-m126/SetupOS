@@ -22,7 +22,6 @@
     - ncdu
     - openssl
     - orbstack
-    - postgresql
     - ripgrep
     - tree
     - wget
