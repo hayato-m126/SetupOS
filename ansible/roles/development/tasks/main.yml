@@ -26,8 +26,5 @@
     mode: 04755
     # why 04755 refer https://github.com/ansible/ansible/issues/13115
 
-- name: install javascript package manage pnpm
-  ansible.builtin.shell: curl -fsSL https://get.pnpm.io/install.sh | sh -
-
 - name: install dotenvx
   ansible.builtin.shell: curl -fsS "https://dotenvx.sh?directory=$HOME/.local/bin/" | sh
