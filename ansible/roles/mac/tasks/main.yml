@@ -33,6 +33,7 @@
     state: present
     install_options: appdir=/Applications
   with_items:
+    - calibre
     - cursor
     - discord
     - ghostty
