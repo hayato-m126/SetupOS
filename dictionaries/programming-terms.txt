@@ -1,3 +1,4 @@
+
 appdir
 argcomplete
 armhf
@@ -40,6 +41,7 @@ keyrings
 KHTML
 kolourpaint
 levelname
+libcap2
 libcudnn
 libfuse
 libnv
@@ -76,6 +78,7 @@ rerunfailures
 rmem
 rustup
 sessionmaker
+setcap
 shellcheck
 shellenv
 shfmt
