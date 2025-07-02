@@ -24,3 +24,7 @@ sudo nvram BootPreference=%00
 ## 設定変更
 
 <https://dev.classmethod.jp/articles/mac-recommended-initial-settings/>
+
+## ghostty ssh setting
+
+<https://ghostty.org/docs/help/terminfo#configure-ssh-to-fall-back-to-a-known-terminfo-entry>
