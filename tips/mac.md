@@ -17,7 +17,7 @@ sudo nvram BootPreference=%00
 - Caps Lock -> Command
 - Control -> Caps Lock
 - Option -> Control
-- Command -> Optionß
+- Command -> Option
 
 ![key_remap](./pic/key_remap.png)
 
