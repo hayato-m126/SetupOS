@@ -19,10 +19,10 @@
     - role: dotfiles
     - role: system
     - role: desktop
-      when: prompt_wsl != 'y'
+      when: prompt_desktop == 'y'
     - role: development
       when: prompt_dev == 'y'
     - role: dev_desktop
-      when: prompt_dev == 'y' and prompt_wsl != 'y'
+      when: prompt_dev == 'y' and prompt_desktop != 'y'
     - role: remote
       when: prompt_remote == 'y'
