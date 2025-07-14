@@ -4,31 +4,10 @@
     name:
       - cmake
       - cmake-curses-gui
-      - sqlitebrowser
       - upx
       - ccache
     update_cache: true
 
 - import_tasks: python.yml
 - import_tasks: rust.yml
-- import_tasks: ros.yml
-
-- name: copy cyclonedds.conf for ros2
-  become: true
-  ansible.builtin.copy:
-    src: 60_cyclonedds.conf
-    dest: /etc/sysctl.d/60_cyclonedds.conf
-
-- name: install libcap2-bin for setcap
-  become: true
-  ansible.builtin.apt:
-    name: libcap2-bin
-    update_cache: true
-
-- name: set capabilities for ifconfig
-  become: true
-  ansible.builtin.command:
-    cmd: setcap cap_net_admin+ep /usr/sbin/ifconfig
-
-- name: install dotenvx
-  ansible.builtin.shell: curl -fsS "https://dotenvx.sh?directory=$HOME/.local/bin/" | sh
+# - import_tasks: ros.yml

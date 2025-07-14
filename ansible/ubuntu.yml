@@ -5,10 +5,12 @@
     - name: prompt_wsl
       prompt: Is target environment WSL? [y/N]
       private: false
+    - name: prompt_desktop
+      prompt: Is target environment is desktop(GUI)? [y/N]
+      private: false
     - name: prompt_dev
       prompt: Is target environment for development? [y/N]
       private: false
-      default: y
     - name: prompt_remote
       prompt: Set up remote tools? [y/N]
       private: false
@@ -19,10 +21,10 @@
     - role: dotfiles
     - role: system
     - role: desktop
-      when: prompt_wsl != 'y'
+      when: prompt_desktop == 'y'
     - role: development
       when: prompt_dev == 'y'
     - role: dev_desktop
-      when: prompt_dev == 'y' and prompt_wsl != 'y'
+      when: prompt_dev == 'y' and prompt_desktop != 'y'
     - role: remote
       when: prompt_remote == 'y'

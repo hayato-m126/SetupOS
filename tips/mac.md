@@ -29,8 +29,6 @@ sudo nvram BootPreference=%00
 
 <https://zenn.dev/yumainaura/articles/qiita-2023-12-16t22_02_36-09_00>
 
-
-
 ## 設定変更
 
 <https://dev.classmethod.jp/articles/mac-recommended-initial-settings/>
