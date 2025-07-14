@@ -21,6 +21,16 @@ sudo nvram BootPreference=%00
 
 ![key_remap](./pic/key_remap.png)
 
+## ショートカット入れ替え
+
+設定 -> キーボード -> キーボードショートカット -> キーボード
+
+次のウィンドウを操作対象にする　-> Option + Tab
+
+<https://zenn.dev/yumainaura/articles/qiita-2023-12-16t22_02_36-09_00>
+
+
+
 ## 設定変更
 
 <https://dev.classmethod.jp/articles/mac-recommended-initial-settings/>
