@@ -1,3 +1,20 @@
+- name: copy cyclonedds.conf for ros2
+  become: true
+  ansible.builtin.copy:
+    src: 60_cyclonedds.conf
+    dest: /etc/sysctl.d/60_cyclonedds.conf
+
+- name: install libcap2-bin for setcap
+  become: true
+  ansible.builtin.apt:
+    name: libcap2-bin
+    update_cache: true
+
+- name: set capabilities for ifconfig
+  become: true
+  ansible.builtin.command:
+    cmd: setcap cap_net_admin+ep /usr/sbin/ifconfig
+
 - name: download lichtblick deb
   ansible.builtin.get_url:
     url: https://github.com/Lichtblick-Suite/lichtblick/releases/download/v1.7.0/lichtblick-1.9.0-linux-amd64.deb
