@@ -9,9 +9,8 @@
       prompt: Is target environment is desktop(GUI)? [y/N]
       private: false
     - name: prompt_dev
-      prompt: Is target environment for development? [Y/n]
+      prompt: Is target environment for development? [y/N]
       private: false
-      default: y
     - name: prompt_remote
       prompt: Set up remote tools? [y/N]
       private: false
