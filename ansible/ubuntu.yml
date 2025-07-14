@@ -5,8 +5,11 @@
     - name: prompt_wsl
       prompt: Is target environment WSL? [y/N]
       private: false
+    - name: prompt_desktop
+      prompt: Is target environment is desktop(GUI)? [y/N]
+      private: false
     - name: prompt_dev
-      prompt: Is target environment for development? [y/N]
+      prompt: Is target environment for development? [Y/n]
       private: false
       default: y
     - name: prompt_remote
