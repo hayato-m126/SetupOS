@@ -29,6 +29,14 @@ sudo nvram BootPreference=%00
 
 <https://zenn.dev/yumainaura/articles/qiita-2023-12-16t22_02_36-09_00>
 
+## 標準function key
+
+設定 -> キーボード -> キーボードショートカット -> ファンクションキー
+
+「F1、F2などのキーを標準のファンクションキーとして使用」
+
+<https://support.apple.com/ja-jp/102439>
+
 ## 設定変更
 
 <https://dev.classmethod.jp/articles/mac-recommended-initial-settings/>
