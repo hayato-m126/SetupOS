@@ -14,6 +14,7 @@
   with_items:
     - azure-cli
     - byobu
+    - colima
     - fish
     - fzf
     - gh
