@@ -36,6 +36,7 @@
     state: present
     install_options: appdir=/Applications
   with_items:
+    - 1password
     - brave-browser
     - calibre
     - cursor
