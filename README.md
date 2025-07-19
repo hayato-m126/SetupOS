@@ -4,8 +4,7 @@ setup OS using ansible
 
 ## notice
 
-aptに以下のようなwarningがある状態で実行するとprivilege output closed while waiting for password promptというようなよくわからないエラーが出ることがある。
-先にaptの修正をする。
+If you run the script with warnings in `apt` like the ones below, you may encounter an ambiguous error such as `privilege output closed while waiting for password prompt`. Please fix the `apt` issues first.
 
 ```shell
 W: https://packages.microsoft.com/repos/vscode/dists/stable/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
@@ -46,7 +45,7 @@ sudo apt install usb-creator-gtk
 
 ## how to run
 
-事前にgithub_rsaをコピーしておく
+Copy `github_rsa` beforehand.
 
 ```shell
 ./setup.sh
@@ -56,8 +55,7 @@ sudo apt install usb-creator-gtk
 
 ### chrome-remote-desktop
 
-24.04でchrome-remote-desktopを設定すると、リモートではログインできるが、ディスプレイつけてローカルでログインしようとするとできない。
-
-session already running　と出る。
+On Ubuntu 24.04, if you set up Chrome Remote Desktop, you can log in remotely, but you cannot log in locally with a display attached.
+An error message `session already running` appears.
 
 <https://askubuntu.com/questions/1516121/cant-login-session-already-running>
