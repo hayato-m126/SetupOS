@@ -12,6 +12,7 @@
     name: "{{ item }}"
     state: present
   with_items:
+    - 1password-cli
     - azure-cli
     - byobu
     - fish
