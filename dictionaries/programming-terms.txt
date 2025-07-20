@@ -32,6 +32,7 @@ gparted
 gpasswd
 gufw
 hardinfo
+Henkan
 hidpi
 hwclock
 insertafter
@@ -56,6 +57,7 @@ localtime
 logind
 markdownlint
 mozc
+Muhenkan
 ncdu
 nemo
 nistp
