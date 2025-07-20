@@ -15,6 +15,7 @@
     - azure-cli
     - byobu
     - colima
+    - docker # cli
     - fish
     - fzf
     - gh
