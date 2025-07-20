@@ -12,6 +12,7 @@
     name: "{{ item }}"
     state: present
   with_items:
+    - 1password-cli
     - azure-cli
     - byobu
     - colima
@@ -37,6 +38,7 @@
     state: present
     install_options: appdir=/Applications
   with_items:
+    - 1password
     - brave-browser
     - calibre
     - cursor
