@@ -45,3 +45,10 @@
     name:
       - unzip
     update_cache: true
+
+- name: wslu
+  become: true
+  ansible.builtin.apt:
+    name:
+      - wslu
+    update_cache: true
