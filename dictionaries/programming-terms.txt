@@ -103,6 +103,8 @@ venv
 winbind
 WORKDIR
 wslg
+wslu
+wslview
 XMODIFIERS
 xset
 zoneinfo
