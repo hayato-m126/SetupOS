@@ -1,8 +1,17 @@
 {
   "recommendations": [
     "charliermarsh.ruff",
-    "bierner.markdown-mermaid",
-    "bpruitt-goddard.mermaid-markdown-syntax-highlighting"
+    "pkief.material-icon-theme",
+    "tyriar.sort-lines",
+    "davidanson.vscode-markdownlint",
+    "oderwat.indent-rainbow",
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github",
+    "huizhou.githd",
+    "mhutchie.git-graph",
+    "editorconfig.editorconfig",
+    "streetsidesoftware.code-spell-checker",
+    "hediet.vscode-drawio",
   ],
   "unwantedRecommendations": [
     "ms-python.isort",
