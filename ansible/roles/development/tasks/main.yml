@@ -6,6 +6,7 @@
       - cmake-curses-gui
       - upx
       - ccache
+      - jq
     update_cache: true
 
 - import_tasks: python.yml
