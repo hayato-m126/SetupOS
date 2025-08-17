@@ -47,4 +47,3 @@
       if [ $SHLVL = 1 ] ; then
           (fcitx5 --disable=wayland -d --verbose '*'=0 &)
       fi
-
