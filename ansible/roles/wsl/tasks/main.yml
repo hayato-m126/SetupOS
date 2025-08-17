@@ -19,10 +19,6 @@
       - wslu
     update_cache: true
 
-- name: keyboard setting
-  become: true
-  ansible.builtin.command: setxkbmap -layout jp
-
 - name: change locale
   become: true
   ansible.builtin.command: update-locale LANG=ja_JP.UTF-8
@@ -39,6 +35,7 @@
   ansible.builtin.blockinfile:
     path: ~/.profile
     block: |
+      setxkbmap -layout jp
       export GTK_IM_MODULE=fcitx5
       export QT_IM_MODULE=fcitx5
       export XMODIFIERS=@im=fcitx5
