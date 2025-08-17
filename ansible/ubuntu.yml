@@ -25,6 +25,6 @@
     - role: development
       when: prompt_dev == 'y'
     - role: dev_desktop
-      when: prompt_dev == 'y' and prompt_desktop != 'y'
+      when: prompt_dev == 'y' and prompt_desktop == 'y'
     - role: remote
       when: prompt_remote == 'y'
