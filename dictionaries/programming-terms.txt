@@ -28,6 +28,7 @@ fdisk
 flameshot
 fontconfig
 ghostty
+githd
 gparted
 gpasswd
 gufw
@@ -83,6 +84,7 @@ rmem
 rustup
 sessionmaker
 setcap
+setxkbmap
 shellcheck
 shellenv
 shfmt

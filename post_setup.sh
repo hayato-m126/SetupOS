@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ -f "$HOME/.ssh/github_rsa" ]; then
+if [ -f "$HOME/.ssh/github_ed25519" ]; then
     bash "$HOME/.dotfiles/install.sh"
     mise install -y
 else
-    echo "$HOME/.ssh/github_rsa not found"
+    echo "$HOME/.ssh/github_ed25519 not found"
 fi
 
 echo "Do you want install python cli tools using uv? (y/n)"

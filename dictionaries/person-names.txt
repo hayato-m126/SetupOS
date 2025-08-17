@@ -3,9 +3,17 @@ bierner
 bpruitt
 charliermarsh
 danielrichter
+davidanson
 dpage
+eamodio
 Hayato
+hediet
+huizhou
 jorgebucaran
+mhutchie
 Mizushima
+oderwat
 phoerious
+pkief
+tyriar
 yesoreyeram
