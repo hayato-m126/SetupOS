@@ -3,6 +3,10 @@
 WSLでubuntuの日本語環境を作る。
 wslgでGUIアプリも動作する。
 
+## reference
+
+<https://zenn.dev/masinc/articles/464bea11f2d47e>
+
 ## TIPS
 
 vscodeはWindows側に入れて、WSLのプラグイン入れておけばおｋ
