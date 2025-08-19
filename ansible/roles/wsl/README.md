@@ -22,9 +22,7 @@ To no longer see this prompt, start Visual Studio Code with the environment vari
 ## use gh in wsl
 
 ```shell
-export BROWSER=wslview
-export GH_BROWSER=wslview
-
-gh auth login
+export BROWSER="/mnt/c/Program\ Files\ (x86)/Microsoft/Edge/Application/msedge.exe"
+gh auth login --web
 # use windows browser
 ```

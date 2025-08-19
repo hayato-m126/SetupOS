@@ -8,6 +8,7 @@
       - ccache
       - jq
       - clang
+      - libc++-dev
     update_cache: true
 
 - import_tasks: python.yml
