@@ -14,6 +14,7 @@ if [ "$answer" == "y" ]; then
     uv tool install pre-commit
     uv tool install argcomplete
     uv tool install vcstool
+    uv tool install nvitop
 else
     echo "cancel"
 fi

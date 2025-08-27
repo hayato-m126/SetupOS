@@ -65,6 +65,7 @@ nemo
 nistp
 NOTSET
 nsswitch
+nvitop
 nvram
 orbstack
 packagekitd
