@@ -44,3 +44,12 @@ sudo nvram BootPreference=%00
 ## ghostty ssh setting
 
 <https://ghostty.org/docs/help/terminfo#configure-ssh-to-fall-back-to-a-known-terminfo-entry>
+
+## キーボードショートカット
+
+| Key              | Behavior                       |
+| ---------------- | ------------------------------ |
+| F11              | デスクトップを切り替え             |
+| Ctrl+left, right | フルスクリーンアプリの切り替え      |
+| Ctrl+Tab         | 同じアプリを切り替え              |
+| Command+Tab      | アプリ切り替え                   |
