@@ -49,7 +49,7 @@ sudo nvram BootPreference=%00
 
 | Key              | Behavior                       |
 | ---------------- | ------------------------------ |
-| F11              | デスクトップを切り替え             |
-| Ctrl+left, right | フルスクリーンアプリの切り替え      |
-| Ctrl+Tab         | 同じアプリを切り替え              |
-| Command+Tab      | アプリ切り替え                   |
+| F11              | デスクトップを切り替え         |
+| Ctrl+left, right | フルスクリーンアプリの切り替え |
+| Ctrl+Tab         | 同じアプリを切り替え           |
+| Command+Tab      | アプリ切り替え                 |
