@@ -14,7 +14,6 @@
   with_items:
     - 1password-cli
     - azure-cli
-    - byobu
     - colima
     - docker # cli
     - fish
@@ -48,6 +47,7 @@
     - keepassxc
     - microsoft-edge
     - obs
+    - openvpn-connect
     - parallels-client
     - thunderbird
     - visual-studio-code

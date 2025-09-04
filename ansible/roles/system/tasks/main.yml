@@ -2,7 +2,6 @@
   become: true
   ansible.builtin.apt:
     name:
-      - byobu
       - gufw
       - htop
       - net-tools
