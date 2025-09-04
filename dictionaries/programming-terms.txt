@@ -7,7 +7,6 @@ autoclean
 autofix
 beautifulsoup
 blockinfile
-byobu
 ccache
 colorlog
 containerd

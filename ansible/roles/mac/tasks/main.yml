@@ -14,7 +14,6 @@
   with_items:
     - 1password-cli
     - azure-cli
-    - byobu
     - colima
     - docker # cli
     - fish
