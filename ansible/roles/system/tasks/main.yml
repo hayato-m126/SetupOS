@@ -1,6 +1,3 @@
-- name: use English folder name
-  ansible.builtin.shell: LANG=C xdg-user-dirs-update --force
-
 - name: install mise
   ansible.builtin.shell: curl https://mise.jdx.dev/install.sh | sh
 

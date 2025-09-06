@@ -1,3 +1,6 @@
+- name: use English folder name
+  ansible.builtin.shell: LANG=C xdg-user-dirs-update --force
+
 - name: install desktop tools using apt
   become: true
   ansible.builtin.apt:
