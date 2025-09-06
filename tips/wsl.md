@@ -34,6 +34,8 @@ C:\Users\hyt\AppData\Local\Packages\CanonicalGroupLimited.UbuntuXX.XXonWindows
 
 コマンドで入れた場合には、以下で仮想ディスクの削除まで行われる
 
+vscodeでwslのディレクトリ開いてるとshutdownしないので注意
+
 ```shell
 wsl -l -v
 wsl --shutdown
