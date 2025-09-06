@@ -1,2 +1,0 @@
-- name: install mise
-  ansible.builtin.shell: curl https://mise.jdx.dev/install.sh | sh
