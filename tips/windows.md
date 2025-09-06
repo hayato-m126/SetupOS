@@ -19,3 +19,16 @@ macとwindowsを併用するためのtips
 直接入力：Katakana → 再変換（デフォはIMEを有効化）
 入力文字なし：Hiragana → 再変換（デフォはひらがなに入力切り替え）
 入力文字なし：Katakana → 再変換（デフォは全角カタカナに入力切替）
+
+## スタートメニューのディレクトリ
+
+```shell
+C:\Users\<ユーザー名>\AppData\Roaming\Microsoft\Windows\Start Menu
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs
+```
+
+エクスプローラに以下のように打つと表示できる
+
+```shell
+shell:AppsFolder
+```
