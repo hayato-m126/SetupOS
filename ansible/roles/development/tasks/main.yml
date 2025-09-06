@@ -1,9 +1,0 @@
-- name: install develop tools
-  become: true
-  ansible.builtin.apt:
-    name:
-      - ccache
-    update_cache: true
-- import_tasks: docker.yml
-
-# - import_tasks: ros.yml

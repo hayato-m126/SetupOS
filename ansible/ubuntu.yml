@@ -8,8 +8,8 @@
     - name: prompt_desktop
       prompt: Is target environment is desktop(GUI)? [y/N]
       private: false
-    - name: prompt_dev
-      prompt: Is target environment for development? [y/N]
+    - name: prompt_container
+      prompt: Set up Container Environment? [y/N]
       private: false
     - name: prompt_remote
       prompt: Set up remote tools? [y/N]
@@ -22,7 +22,7 @@
     - role: system
     - role: desktop
       when: prompt_desktop == 'y'
-    - role: development
-      when: prompt_dev == 'y'
+    - role: container
+      when: prompt_container == 'y'
     - role: remote
       when: prompt_remote == 'y'
