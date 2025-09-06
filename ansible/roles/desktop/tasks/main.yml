@@ -84,3 +84,4 @@
 
 - import_tasks: multimedia.yml
 - import_tasks: cinnamon.yml
+- import_tasks: vscode.yml
