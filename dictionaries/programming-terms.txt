@@ -103,6 +103,7 @@ uvicorn
 vcstool
 venv
 venv
+vhdx
 winbind
 WORKDIR
 wslg
