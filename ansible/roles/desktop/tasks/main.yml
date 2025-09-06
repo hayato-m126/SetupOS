@@ -1,3 +1,6 @@
+- name: use English folder name
+  ansible.builtin.shell: LANG=C xdg-user-dirs-update --force
+
 - name: install desktop tools using apt
   become: true
   ansible.builtin.apt:
@@ -7,8 +10,10 @@
       - exfatprogs
       - gparted
       - hardinfo
+      - libfuse2 # https://syohex.hatenablog.com/entry/2022/05/02/230822
       - linux-generic-hwe-{{ ansible_facts['distribution_version'] }}
       - meld
+      - terminator
       - thunderbird-locale-ja
       - winbind
       - zstd
@@ -79,3 +84,4 @@
 
 - import_tasks: multimedia.yml
 - import_tasks: cinnamon.yml
+- import_tasks: vscode.yml

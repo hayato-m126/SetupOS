@@ -1,11 +1,8 @@
 # WSL Setup
 
 WSLでubuntuの日本語環境を作る。
-wslgでGUIアプリも動作する。
-
-## reference
-
-<https://zenn.dev/masinc/articles/464bea11f2d47e>
+24.04だとfcitx5-mozcの動きがなんか不安定だった。半角全角を押すと、高速で入力設定が切り替わる。ctrl+spaceだと安定した。
+wslにGUI環境そもそもいらない気持ちになったので、cuiだけ使う
 
 ## TIPS
 
