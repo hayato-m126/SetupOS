@@ -9,6 +9,7 @@
       - net-tools
       - ncdu
       - fzf
+      - jq
       - ripgrep
       - tree
     update_cache: true

@@ -2,15 +2,7 @@
   become: true
   ansible.builtin.apt:
     name:
-      - cmake
-      - cmake-curses-gui
-      - upx
       - ccache
-      - jq
-      - clang
-      - libc++-dev
     update_cache: true
 
-- import_tasks: python.yml
-- import_tasks: rust.yml
 # - import_tasks: ros.yml
