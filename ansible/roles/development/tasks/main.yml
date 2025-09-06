@@ -4,5 +4,6 @@
     name:
       - ccache
     update_cache: true
+- import_tasks: docker.yml
 
 # - import_tasks: ros.yml
