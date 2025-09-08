@@ -5,6 +5,7 @@
   become: true
   ansible.builtin.apt:
     name:
+      - git-lfs
       - htop
       - net-tools
       - ncdu
