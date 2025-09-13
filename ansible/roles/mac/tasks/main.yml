@@ -13,9 +13,6 @@
     state: present
   with_items:
     - 1password-cli
-    - azure-cli
-    - colima
-    - docker # cli
     - fish
     - fzf
     - gh
@@ -40,7 +37,6 @@
     - 1password
     - brave-browser
     - calibre
-    - cursor
     - discord
     - ghostty
     - google-japanese-ime
