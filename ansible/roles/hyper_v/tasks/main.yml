@@ -9,6 +9,7 @@
     update_cache: true
 
 - name: Add startxfce4 to /etc/xrdp/startwm.sh
+  become: true
   lineinfile:
     path: /etc/xrdp/startwm.sh
     line: 'startxfce4'
@@ -17,6 +18,7 @@
     backup: yes
 
 - name: Set autorun to Xorg in /etc/xrdp/xrdp.ini
+  become: true
   replace:
     path: /etc/xrdp/xrdp.ini
     regexp: '^autorun=.*'
