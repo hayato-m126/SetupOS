@@ -5,9 +5,11 @@ asyncio
 asyncpg
 autoclean
 autofix
+autorun
 beautifulsoup
 blockinfile
 ccache
+CLSID
 colorlog
 containerd
 cprint
@@ -15,6 +17,7 @@ cuda
 customizer
 cyclonedds
 datefmt
+dbus
 dconf
 dearmour
 debugpy
@@ -34,6 +37,7 @@ gufw
 hardinfo
 Henkan
 hidpi
+HKCU
 hwclock
 insertafter
 isort
@@ -95,6 +99,8 @@ sqlalchemy
 sqlitebrowser
 sqlmodel
 sqltypes
+startwm
+startxfce
 termcolor
 unhold
 usbubuntu
@@ -110,6 +116,8 @@ wslg
 wslu
 wslview
 XMODIFIERS
+Xorg
+xrdp
 xset
 zoneinfo
 zstd

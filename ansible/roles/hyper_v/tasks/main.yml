@@ -12,13 +12,13 @@
   become: true
   lineinfile:
     path: /etc/xrdp/startwm.sh
-    line: 'startxfce4'
+    line: startxfce4
     state: present
-    create: no
+    create: false
 
 - name: Set autorun to Xorg in /etc/xrdp/xrdp.ini
   become: true
   replace:
     path: /etc/xrdp/xrdp.ini
-    regexp: '^autorun=.*'
-    replace: 'autorun=Xorg'
+    regexp: ^autorun=.*
+    replace: autorun=Xorg
