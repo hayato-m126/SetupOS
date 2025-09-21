@@ -118,6 +118,7 @@ wslview
 XMODIFIERS
 Xorg
 xrdp
+xsession
 xset
 zoneinfo
 zstd

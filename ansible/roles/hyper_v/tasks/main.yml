@@ -2,19 +2,9 @@
   become: true
   ansible.builtin.apt:
     name:
-      - xfce4
-      - xfce4-terminal
       - xrdp
       - dbus-x11
     update_cache: true
-
-- name: Add startxfce4 to /etc/xrdp/startwm.sh
-  become: true
-  lineinfile:
-    path: /etc/xrdp/startwm.sh
-    line: startxfce4
-    state: present
-    create: false
 
 - name: Set autorun to Xorg in /etc/xrdp/xrdp.ini
   become: true
@@ -22,3 +12,24 @@
     path: /etc/xrdp/xrdp.ini
     regexp: ^autorun=.*
     replace: autorun=Xorg
+
+- name: add cinnamon xsession file
+  ansible.builtin.copy:
+    src: .xsession
+    dest: ~/.xsession
+    mode: "0755"
+
+- name: comment out Xsession
+  become: true
+  replace:
+    path: /etc/xrdp/startwm.sh
+    regexp: ^exec /bin/sh /etc/X11/Xsession
+    replace: "#exec /bin/sh /etc/X11/Xsession"
+
+- name: Add cinnamon to /etc/xrdp/startwm.sh
+  become: true
+  lineinfile:
+    path: /etc/xrdp/startwm.sh
+    line: exec cinnamon-session
+    state: present
+    create: false
