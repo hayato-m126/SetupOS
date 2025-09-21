@@ -22,7 +22,7 @@
 - name: comment out Xsession
   become: true
   replace:
-    path: /etc/xrdp/xrdp.ini
+    path: /etc/xrdp/startwm.sh
     regexp: "^exec /bin/sh /etc/X11/Xsession"
     replace: "#exec /bin/sh /etc/X11/Xsession"
 
