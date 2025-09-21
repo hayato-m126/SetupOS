@@ -21,12 +21,12 @@
     - role: japanese
     - role: wsl
       when: prompt_wsl == 'y'
-    - role: hyper_v
-      when: prompt_hyper_v == 'y'
     - role: dotfiles
     - role: system
     - role: desktop
       when: prompt_desktop == 'y'
+    - role: hyper_v
+      when: prompt_hyper_v == 'y'
     - role: container
       when: prompt_container == 'y'
     - role: remote
