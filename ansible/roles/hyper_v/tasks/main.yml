@@ -15,7 +15,6 @@
     line: 'startxfce4'
     state: present
     create: no
-    backup: yes
 
 - name: Set autorun to Xorg in /etc/xrdp/xrdp.ini
   become: true
@@ -23,4 +22,3 @@
     path: /etc/xrdp/xrdp.ini
     regexp: '^autorun=.*'
     replace: 'autorun=Xorg'
-    backup: yes
