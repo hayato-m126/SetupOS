@@ -23,8 +23,8 @@
   become: true
   replace:
     path: /etc/xrdp/xrdp.ini
-    regexp: ^exec /etc/X11/Xsession
-    replace: "#exec /etc/X11/Xsession"
+    regexp: "^exec /bin/sh /etc/X11/Xsession"
+    replace: "#exec /bin/sh /etc/X11/Xsession"
 
 - name: Add cinnamon to /etc/xrdp/startwm.sh
   become: true
