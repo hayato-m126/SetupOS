@@ -5,6 +5,9 @@
     - name: prompt_wsl
       prompt: Is target environment WSL? [y/N]
       private: false
+    - name: prompt_hyper_v
+      prompt: Is target environment Hyper-V? [y/N]
+      private: false
     - name: prompt_desktop
       prompt: Is target environment is desktop(GUI)? [y/N]
       private: false
@@ -18,6 +21,8 @@
     - role: japanese
     - role: wsl
       when: prompt_wsl == 'y'
+    - role: hyper_v
+      when: prompt_hyper_v == 'y'
     - role: dotfiles
     - role: system
     - role: desktop
