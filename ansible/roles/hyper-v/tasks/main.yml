@@ -1,0 +1,24 @@
+- name: install xrdp
+  become: true
+  ansible.builtin.apt:
+    name:
+      - xfce4
+      - xfce4-terminal
+      - xrdp
+      - dbus-x11
+    update_cache: true
+
+- name: Add startxfce4 to /etc/xrdp/startwm.sh
+  lineinfile:
+    path: /etc/xrdp/startwm.sh
+    line: 'startxfce4'
+    state: present
+    create: no
+    backup: yes
+
+- name: Set autorun to Xorg in /etc/xrdp/xrdp.ini
+  replace:
+    path: /etc/xrdp/xrdp.ini
+    regexp: '^autorun=.*'
+    replace: 'autorun=Xorg'
+    backup: yes
