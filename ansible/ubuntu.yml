@@ -5,7 +5,7 @@
     - name: prompt_wsl
       prompt: Is target environment WSL? [y/N]
       private: false
-    - name: prompt_hyper_v
+    - name: prompt_hyper-v
       prompt: Is target environment WSL? [y/N]
       private: false
     - name: prompt_desktop
@@ -21,8 +21,8 @@
     - role: japanese
     - role: wsl
       when: prompt_wsl == 'y'
-    - role: hyper_v
-      when: prompt_hyper_v == 'y'
+    - role: hyper-v
+      when: prompt_hyper-v == 'y'
     - role: dotfiles
     - role: system
     - role: desktop
