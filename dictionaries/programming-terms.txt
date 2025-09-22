@@ -75,6 +75,7 @@ nvram
 orbstack
 packagekitd
 pathsep
+pciutils
 pgadmin
 pipx
 poolclass
