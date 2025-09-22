@@ -28,6 +28,7 @@
       - docker-ce-cli
       - containerd.io
       - docker-compose-plugin
+      - pciutils # for lspci
     update_cache: true
 
 - name: add {{ ansible_facts['user_id'] }} to docker group
@@ -36,3 +37,13 @@
     name: "{{ ansible_facts['user_id'] }}"
     groups: docker
     append: true
+
+- name: Check if NVIDIA GPU is present
+  command: lspci | grep -i nvidia
+  register: nvidia_gpu_check
+  failed_when: false
+  changed_when: false
+
+- name: Install NVIDIA Container Toolkit if NVIDIA GPU is present
+  import_tasks: nvidia_container_toolkit.yml
+  when: nvidia_gpu_check.rc == 0

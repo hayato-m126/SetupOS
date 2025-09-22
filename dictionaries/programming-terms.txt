@@ -19,6 +19,7 @@ cyclonedds
 datefmt
 dbus
 dconf
+dearmor
 dearmour
 debugpy
 Dokerfile
@@ -52,6 +53,7 @@ libcap2
 libcudnn
 libfuse
 libnv
+libnvidia
 libpq
 libxcb
 lichtblick
@@ -73,6 +75,7 @@ nvram
 orbstack
 packagekitd
 pathsep
+pciutils
 pgadmin
 pipx
 poolclass
