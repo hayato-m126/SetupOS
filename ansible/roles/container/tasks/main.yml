@@ -44,9 +44,8 @@
   failed_when: false
   changed_when: false
 
-- name: Fail if no NVIDIA GPU detected
-  fail:
-    msg: No NVIDIA GPU detected on this system
+- name: Skip NVIDIA Container Toolkit installation if no NVIDIA GPU detected
+  meta: end_host
   when: nvidia_gpu_check.rc != 0
 
 - name: Add NVIDIA Container Toolkit GPG key
