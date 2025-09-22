@@ -45,8 +45,13 @@
   changed_when: false
 
 - name: Skip NVIDIA Container Toolkit installation if no NVIDIA GPU detected
-  meta: end_host
   when: nvidia_gpu_check.rc != 0
+  block:
+    - name: Notify NVIDIA GPU not found
+      debug:
+        msg: "NVIDIA GPU not found. Skipping NVIDIA Container Toolkit installation."
+    - name: End play for this role
+      meta: end_play
 
 - name: Add NVIDIA Container Toolkit GPG key
   become: true
