@@ -47,4 +47,3 @@
 - name: Install NVIDIA Container Toolkit if NVIDIA GPU is present
   import_tasks: nvidia_container_toolkit.yml
   when: nvidia_gpu_check.rc == 0
-
