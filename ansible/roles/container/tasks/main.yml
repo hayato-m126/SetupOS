@@ -66,6 +66,7 @@
     creates: /etc/apt/sources.list.d/nvidia-container-toolkit.list
 
 - name: Install NVIDIA Container Toolkit packages
+  become: true
   ansible.builtin.apt:
     name:
       - nvidia-container-toolkit={{ nvidia_container_toolkit_version }}
