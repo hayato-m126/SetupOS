@@ -39,7 +39,7 @@
 
 - name: Install NVIDIA Container Toolkit on Ubuntu/Debian
   hosts: all
-  become: yes
+  become: true
 
   tasks:
     - name: Check if NVIDIA GPU is present
@@ -50,7 +50,7 @@
 
     - name: Fail if no NVIDIA GPU detected
       fail:
-        msg: "No NVIDIA GPU detected on this system"
+        msg: No NVIDIA GPU detected on this system
       when: nvidia_gpu_check.rc != 0
 
     - name: Install prerequisites (Ubuntu/Debian)
@@ -60,7 +60,7 @@
           - gnupg
           - software-properties-common
         state: present
-        update_cache: yes
+        update_cache: true
 
     - name: Add NVIDIA Container Toolkit GPG key
       shell: |
@@ -79,15 +79,15 @@
 
     - name: Update apt cache
       apt:
-        update_cache: yes
+        update_cache: true
 
     - name: Install NVIDIA Container Toolkit packages
       apt:
         name:
-          - "nvidia-container-toolkit={{ nvidia_container_toolkit_version }}"
-          - "nvidia-container-toolkit-base={{ nvidia_container_toolkit_version }}"
-          - "libnvidia-container-tools={{ nvidia_container_toolkit_version }}"
-          - "libnvidia-container1={{ nvidia_container_toolkit_version }}"
+          - nvidia-container-toolkit={{ nvidia_container_toolkit_version }}
+          - nvidia-container-toolkit-base={{ nvidia_container_toolkit_version }}
+          - libnvidia-container-tools={{ nvidia_container_toolkit_version }}
+          - libnvidia-container1={{ nvidia_container_toolkit_version }}
         state: present
 
     - name: Check if Docker is installed
@@ -115,4 +115,4 @@
       systemd:
         name: docker
         state: restarted
-        daemon_reload: yes
+        daemon_reload: true
