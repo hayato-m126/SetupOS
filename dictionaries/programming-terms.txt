@@ -105,6 +105,7 @@ sqltypes
 startwm
 startxfce
 termcolor
+tlsv
 unhold
 usbubuntu
 usbuntu
