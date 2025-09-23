@@ -1,0 +1,19 @@
+- name: Install required packages
+  become: true
+  ansible.builtin.apt:
+    name: build-essential
+    update_cache: true
+
+- name: Download and install rustup
+  become: false
+  shell: |
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \
+    | sh -s -- -y --no-modify-path
+  args:
+    creates: "{{ ansible_env.HOME }}/.cargo/bin/rustup"
+
+- name: Install dora-cli
+  community.general.cargo:
+    name: dora-cli
+  environment:
+    PATH: "{{ ansible_env.HOME }}/.cargo/bin:{{ ansible_env.PATH }}"

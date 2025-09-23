@@ -17,6 +17,9 @@
     - name: prompt_remote
       prompt: Set up remote tools? [y/N]
       private: false
+    - name: prompt_robotics
+      prompt: Set up robotics development tools? [y/N]
+      private: false
   roles:
     - role: japanese
     - role: wsl
@@ -31,3 +34,7 @@
       when: prompt_container == 'y'
     - role: remote
       when: prompt_remote == 'y'
+    - role: dora
+      when: prompt_robotics == 'y'
+    # - role: ros
+    #   when: prompt_robotics == 'y'
