@@ -7,61 +7,61 @@
     name:
       - cinnamon-desktop-environment
       - dconf-editor
-      - exfatprogs
+      #- exfatprogs
       - gparted
       - hardinfo
       - libfuse2 # https://syohex.hatenablog.com/entry/2022/05/02/230822
-      - linux-generic-hwe-{{ ansible_facts['distribution_version'] }}
+      #- linux-generic-hwe-{{ ansible_facts['distribution_version'] }}
       - meld
       - terminator
-      - thunderbird-locale-ja
-      - winbind
+      #- thunderbird-locale-ja
+      #- winbind
       - zstd
     update_cache: true
 
-- name: add grub-customizer ppa
-  become: true
-  ansible.builtin.apt_repository:
-    repo: ppa:danielrichter2007/grub-customizer
-    state: present
+# - name: add grub-customizer ppa
+#   become: true
+#   ansible.builtin.apt_repository:
+#     repo: ppa:danielrichter2007/grub-customizer
+#     state: present
 
-- name: install grub-customizer
-  become: true
-  ansible.builtin.apt:
-    name: grub-customizer
-    update_cache: true
+# - name: install grub-customizer
+#   become: true
+#   ansible.builtin.apt:
+#     name: grub-customizer
+#     update_cache: true
 
-- name: add keepassxc ppa
-  become: true
-  ansible.builtin.apt_repository:
-    repo: ppa:phoerious/keepassxc
-    state: present
+# - name: add keepassxc ppa
+#   become: true
+#   ansible.builtin.apt_repository:
+#     repo: ppa:phoerious/keepassxc
+#     state: present
 
-- name: install keepassxc
-  become: true
-  ansible.builtin.apt:
-    name: keepassxc
-    update_cache: true
+# - name: install keepassxc
+#   become: true
+#   ansible.builtin.apt:
+#     name: keepassxc
+#     update_cache: true
 
-- name: disable sleep when close note pc display
-  become: true
-  ansible.builtin.lineinfile:
-    path: /etc/systemd/logind.conf
-    line: HandleLidSwitch=ignore
-    insertafter: EOF
+# - name: disable sleep when close note pc display
+#   become: true
+#   ansible.builtin.lineinfile:
+#     path: /etc/systemd/logind.conf
+#     line: HandleLidSwitch=ignore
+#     insertafter: EOF
 
-- name: set clock local for Windows dual boot system
-  become: true
-  community.general.timezone:
-    name: Asia/Tokyo
-    hwclock: local
+# - name: set clock local for Windows dual boot system
+#   become: true
+#   community.general.timezone:
+#     name: Asia/Tokyo
+#     hwclock: local
 
-- name: setting for winbind
-  become: true
-  ansible.builtin.replace:
-    path: /etc/nsswitch.conf
-    regexp: " dns$"
-    replace: " dns wins"
+# - name: setting for winbind
+#   become: true
+#   ansible.builtin.replace:
+#     path: /etc/nsswitch.conf
+#     regexp: " dns$"
+#     replace: " dns wins"
 
 - name: add chrome apt key
   become: true
@@ -82,6 +82,6 @@
     name: google-chrome-stable
     update_cache: true
 
-- import_tasks: multimedia.yml
+#- import_tasks: multimedia.yml
 - import_tasks: cinnamon.yml
 - import_tasks: vscode.yml
