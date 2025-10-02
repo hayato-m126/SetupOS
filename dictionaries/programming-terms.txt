@@ -30,6 +30,7 @@ fcitx
 fdisk
 flameshot
 fontconfig
+gedit
 ghostty
 githd
 gparted
