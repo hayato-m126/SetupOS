@@ -3,6 +3,7 @@
   ansible.builtin.apt:
     name: build-essential
     update_cache: true
+  when: ansible_facts["os_family"] == 'Ubuntu'
 
 - name: Download and install rustup
   become: false
