@@ -37,11 +37,10 @@
   with_items:
     - 1password
     - brave-browser
-    - calibre
+    # - calibre
     - discord
     - ghostty
     - google-japanese-ime
-    - keepassxc
     - microsoft-edge
     - obs
     - openvpn-connect

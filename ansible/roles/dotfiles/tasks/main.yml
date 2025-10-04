@@ -1,14 +1,8 @@
-- name: clone dotfiles
-  ansible.builtin.git:
-    repo: https://github.com/hayato-m126/dotfiles.git
-    dest: ~/.dotfiles
+- name: Check if dotfiles directory exists
+  ansible.builtin.stat:
+    path: "{{ ansible_env.HOME }}/.dotfiles"
+  register: dotfiles_stat
 
-- name: create .ssh directory
-  ansible.builtin.file:
-    path: ~/.ssh
-    state: directory
-
-- name: copy known_hosts
-  ansible.builtin.copy:
-    src: known_hosts
-    dest: ~/.ssh
+- name: Include dotfiles role only if not exists
+  ansible.builtin.include_tasks: dotfiles.yml
+  when: not dotfiles_stat.stat.exists
