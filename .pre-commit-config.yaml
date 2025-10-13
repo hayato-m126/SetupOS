@@ -3,7 +3,7 @@ ci:
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: check-json
       - id: check-merge-conflict
@@ -34,24 +34,24 @@ repos:
       - id: yamllint
 
   - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.10.0.1
+    rev: v0.11.0.1
     hooks:
       - id: shellcheck
 
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.11.0-1
+    rev: v3.12.0-2
     hooks:
       - id: shfmt
         args: [-w, -s, -i=4]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.12.0 # Match the version used by the vscode extension. Otherwise, the editor and the command may say different things.
+    rev: v0.14.0 # Match the version used by the vscode extension. Otherwise, the editor and the command may say different things.
     hooks:
       - id: ruff
         args: [--fix]
       - id: ruff-format
 
   - repo: https://github.com/streetsidesoftware/cspell-cli
-    rev: v9.1.1
+    rev: v9.2.0
     hooks:
       - id: cspell # Spell check changed files
