@@ -36,5 +36,5 @@
       when: prompt_remote == 'y'
     - role: dora
       when: prompt_robotics == 'y'
-    # - role: ros
-    #   when: prompt_robotics == 'y'
+    - role: ros
+      when: prompt_robotics == 'y'
