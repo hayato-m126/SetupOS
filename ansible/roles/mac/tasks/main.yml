@@ -14,19 +14,15 @@
   with_items:
     - 1password-cli
     - fish
-    - fzf
     - gh
     - git
     - git-lfs
     - htop
-    - jq
     - ncdu
     - openssl
     - orbstack
-    - ripgrep
     - tree
     - wget
-    - zoxide
     - zstd
 
 - name: install homebrew cask packages
