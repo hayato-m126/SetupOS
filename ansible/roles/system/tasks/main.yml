@@ -11,11 +11,7 @@
       - htop
       - net-tools
       - ncdu
-      - fzf
-      - jq
-      - ripgrep
       - tree
-      - zoxide
     update_cache: true
 
 - import_tasks: fish.yml
