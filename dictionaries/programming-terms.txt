@@ -6,6 +6,7 @@ asyncpg
 autoclean
 autofix
 autorun
+bcdedit
 beautifulsoup
 blockinfile
 ccache

@@ -21,7 +21,7 @@ USB bootのubuntuでパーティションをマウントして丸ごと消す。
 
 Windows側でコマンドうってエントリーを消す
 
-```
+```shell
 bcdedit /enum firmware
 
 identifier              {cf26aa51-b179-11ef-98d4-806e6f6e6963}
