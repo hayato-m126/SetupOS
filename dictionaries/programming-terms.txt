@@ -6,6 +6,7 @@ asyncpg
 autoclean
 autofix
 autorun
+bcdedit
 beautifulsoup
 blockinfile
 ccache
@@ -98,6 +99,7 @@ shellcheck
 shellenv
 shfmt
 SHLVL
+shimx
 Sonoma
 sqlalchemy
 sqlitebrowser
