@@ -99,6 +99,7 @@ shellcheck
 shellenv
 shfmt
 SHLVL
+shimx
 Sonoma
 sqlalchemy
 sqlitebrowser

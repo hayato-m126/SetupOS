@@ -25,7 +25,7 @@ Windows側でコマンドうってエントリーを消す
 bcdedit /enum firmware
 
 identifier              {cf26aa51-b179-11ef-98d4-806e6f6e6963}
-device                  partition=\Device\HarddiskVolume1
+device                  partition=\Device\HardDiskVolume1
 path                    \EFI\ubuntu\shimx64.efi
 description             ubuntu
 
