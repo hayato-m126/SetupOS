@@ -70,6 +70,7 @@ Muhenkan
 ncdu
 nemo
 nistp
+nomodeset
 NOTSET
 nsswitch
 nvitop
@@ -98,8 +99,8 @@ setxkbmap
 shellcheck
 shellenv
 shfmt
-SHLVL
 shimx
+SHLVL
 Sonoma
 sqlalchemy
 sqlitebrowser
