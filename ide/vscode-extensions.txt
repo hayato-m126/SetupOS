@@ -10,7 +10,6 @@ huizhou.githd
 markwhen.markwhen
 medo64.render-crlf
 mhutchie.git-graph
-ms-ceintl.vscode-language-pack-ja
 ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance
