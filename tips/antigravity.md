@@ -35,9 +35,16 @@ rm $env:USERPROFILE\.antigravity
 rm $env:USERPROFILE\.gemini
 ```
 
+### Ubuntu
+
+```shell
+rm -rf ~/.antigravity
+rm -rf ~/.gemini
+rm -rf ~/.config/Antigravity
+```
+
 ## コマンドライン
 
 インストール時にcommand lineを追加にチェックが入ってるとagyコマンドが使えるようになる。
 
-.zshrcにantigravityのpathが追加されるだけ。
-Windowsではこの機能ない。
+.zshrcにantigravityのpathが追加されるだけ。インストーラで見た限りMacしかない。
