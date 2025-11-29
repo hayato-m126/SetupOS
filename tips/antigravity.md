@@ -17,10 +17,20 @@ https://marketplace.visualstudio.com/_apis/public/gallery
 
 vscode importやって、なんか汚くなっちゃったときなどにやる
 
+### Mac
+
 ```shell
-# mac
 rm -rf ~/.antigravity
 rm ~/.gemini/GEMINI.md
 rm -rf ~/.gemini/antigravity
 rm -rf ~/Library/Application\ Support/Antigravity
+```
+
+### Windows
+
+```shell
+# powershell
+rm $env:APPDATA\Antigravity
+rm $env:USERPROFILE\.antigravity
+rm $env:USERPROFILE\.gemini
 ```
