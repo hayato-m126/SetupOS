@@ -4,8 +4,10 @@ bpruitt
 charliermarsh
 danielrichter
 davidanson
+dbaeumer
 dpage
 eamodio
+exiasr
 Hayato
 hediet
 huizhou
