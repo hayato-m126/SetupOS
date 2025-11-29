@@ -31,18 +31,6 @@
     name: grub-customizer
     update_cache: true
 
-- name: add keepassxc ppa
-  become: true
-  ansible.builtin.apt_repository:
-    repo: ppa:phoerious/keepassxc
-    state: present
-
-- name: install keepassxc
-  become: true
-  ansible.builtin.apt:
-    name: keepassxc
-    update_cache: true
-
 - name: disable sleep when close note pc display
   become: true
   ansible.builtin.lineinfile:

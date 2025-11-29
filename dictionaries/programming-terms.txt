@@ -44,7 +44,6 @@ HKCU
 hwclock
 insertafter
 isort
-keepassxc
 keymap
 keyrings
 KHTML
