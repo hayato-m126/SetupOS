@@ -12,7 +12,6 @@
       - gparted
       - hardinfo
       - libfuse2 # https://syohex.hatenablog.com/entry/2022/05/02/230822
-      - linux-generic-hwe-{{ ansible_facts['distribution_version'] }}
       - meld
       - terminator
       - thunderbird-locale-ja
