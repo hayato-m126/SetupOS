@@ -12,6 +12,15 @@
       - net-tools
       - ncdu
       - tree
+      - flatpak
+      - gnome-software-plugin-flatpak
     update_cache: true
+
+- name: Add Flathub remote
+  become: true
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
 
 - import_tasks: fish.yml
