@@ -51,6 +51,8 @@
     regexp: " dns$"
     replace: " dns wins"
 
+- import_tasks: browser.yml
 - import_tasks: multimedia.yml
 - import_tasks: cinnamon.yml
 - import_tasks: vscode.yml
+- import_tasks: antigravity.yml
