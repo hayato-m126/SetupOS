@@ -17,3 +17,8 @@
     name: google-chrome-stable
     update_cache: true
 
+- name: install zen browser
+  become: true
+  community.general.flatpak:
+    name: app.zen_browser.zen
+    state: present
