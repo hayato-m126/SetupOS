@@ -17,6 +17,25 @@
     name: google-chrome-stable
     update_cache: true
 
+- name: add microsoft edge apt key
+  become: true
+  ansible.builtin.apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: add microsoft edge apt repository
+  become: true
+  ansible.builtin.apt_repository:
+    repo: deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main
+    filename: microsoft-edge
+    state: present
+
+- name: install microsoft edge
+  become: true
+  ansible.builtin.apt:
+    name: microsoft-edge-stable
+    update_cache: true
+
 - name: install zen browser
   become: true
   community.general.flatpak:
