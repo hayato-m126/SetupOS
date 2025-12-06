@@ -51,25 +51,6 @@
     regexp: " dns$"
     replace: " dns wins"
 
-- name: add chrome apt key
-  become: true
-  ansible.builtin.apt_key:
-    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
-    state: present
-
-- name: add chrome apt repository
-  become: true
-  ansible.builtin.apt_repository:
-    repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
-    filename: google-chrome
-    state: present
-
-- name: install google-chrome
-  become: true
-  ansible.builtin.apt:
-    name: google-chrome-stable
-    update_cache: true
-
 - import_tasks: multimedia.yml
 - import_tasks: cinnamon.yml
 - import_tasks: vscode.yml
