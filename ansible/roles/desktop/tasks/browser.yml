@@ -36,6 +36,26 @@
     name: microsoft-edge-stable
     update_cache: true
 
+- name: download brave keyring
+  become: true
+  ansible.builtin.get_url:
+    url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+    dest: /usr/share/keyrings/brave-browser-archive-keyring.gpg
+    mode: '0644'
+
+- name: add brave apt repository
+  become: true
+  ansible.builtin.apt_repository:
+    repo: deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main
+    filename: brave-browser-release
+    state: present
+
+- name: install brave-browser
+  become: true
+  ansible.builtin.apt:
+    name: brave-browser
+    update_cache: true
+
 - name: install zen browser
   become: true
   community.general.flatpak:
