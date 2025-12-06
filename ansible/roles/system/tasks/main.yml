@@ -1,7 +1,10 @@
-- name: install mise
-  ansible.builtin.shell: curl https://mise.jdx.dev/install.sh | sh
-  args:
-    creates: "{{ ansible_env.HOME }}/.local/bin/mise"
+# - name: install mise
+#   ansible.builtin.shell: curl https://mise.jdx.dev/install.sh | sh
+#   args:
+#     creates: "{{ ansible_env.HOME }}/.local/bin/mise"
+
+- name: install devbox
+  ansible.builtin.shell: curl -fsSL https://get.jetify.com/devbox | bash
 
 - name: install system tools using apt
   become: true
