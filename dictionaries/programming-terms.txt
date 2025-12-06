@@ -32,6 +32,8 @@ exfatprogs
 fcitx
 fdisk
 flameshot
+flathub
+flatpakrepo
 fontconfig
 gedit
 ghostty
