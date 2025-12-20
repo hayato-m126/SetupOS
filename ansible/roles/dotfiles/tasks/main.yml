@@ -1,6 +1,6 @@
 - name: Check if dotfiles directory exists
   ansible.builtin.stat:
-    path: "{{ ansible_env.HOME }}/.dotfiles"
+    path: "{{ ansible_facts['env']['HOME'] }}/.dotfiles"
   register: dotfiles_stat
 
 - name: Include dotfiles role only if not exists
