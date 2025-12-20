@@ -11,10 +11,10 @@
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \
     | sh -s -- -y --no-modify-path
   args:
-    creates: "{{ ansible_env.HOME }}/.cargo/bin/rustup"
+    creates: "{{ ansible_facts['env']['HOME'] }}/.cargo/bin/rustup"
 
 - name: Install dora-cli
   community.general.cargo:
     name: dora-cli
   environment:
-    PATH: "{{ ansible_env.HOME }}/.cargo/bin:{{ ansible_env.PATH }}"
+    PATH: "{{ ansible_facts['env']['HOME'] }}/.cargo/bin:{{ ansible_env.PATH }}"
