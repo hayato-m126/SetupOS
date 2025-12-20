@@ -25,6 +25,7 @@ dconf
 dearmor
 dearmour
 debugpy
+devbox
 Dokerfile
 dotenvx
 dpkg
