@@ -5,7 +5,6 @@
   become: true
   ansible.builtin.apt:
     name:
-      - cinnamon-desktop-environment
       - dconf-editor
       - exfatprogs
       - gedit
