@@ -1,3 +1,10 @@
+- name: install cinnamon desktop environment
+  become: true
+  ansible.builtin.apt:
+    name:
+      - cinnamon-desktop-environment
+    update_cache: true
+
 - name: set cinnamon env default terminal
   community.general.dconf:
     key: "/org/cinnamon/desktop/applications/terminal/exec" # yamllint disable-line rule:quoted-strings
