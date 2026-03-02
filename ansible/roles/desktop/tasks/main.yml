@@ -6,15 +6,15 @@
   ansible.builtin.apt:
     name:
       - dconf-editor
-      - exfatprogs
+      # - exfatprogs
       - gedit
       - gparted
       - hardinfo
       - libfuse2 # https://syohex.hatenablog.com/entry/2022/05/02/230822
       - meld
       - terminator
-      - thunderbird-locale-ja
-      - winbind
+      # - thunderbird-locale-ja
+      # - winbind
       - zstd
     update_cache: true
 
@@ -31,18 +31,24 @@
     repo: ppa:danielrichter2007/grub-customizer
     state: present
 
-- name: install grub-customizer
-  become: true
-  ansible.builtin.apt:
-    name: grub-customizer
-    update_cache: true
+# - name: add grub-customizer ppa
+#   become: true
+#   ansible.builtin.apt_repository:
+#     repo: ppa:danielrichter2007/grub-customizer
+#     state: present
 
-- name: disable sleep when close note pc display
-  become: true
-  ansible.builtin.lineinfile:
-    path: /etc/systemd/logind.conf
-    line: HandleLidSwitch=ignore
-    insertafter: EOF
+# - name: install grub-customizer
+#   become: true
+#   ansible.builtin.apt:
+#     name: grub-customizer
+#     update_cache: true
+
+# - name: disable sleep when close note pc display
+#   become: true
+#   ansible.builtin.lineinfile:
+#     path: /etc/systemd/logind.conf
+#     line: HandleLidSwitch=ignore
+#     insertafter: EOF
 
 - name: set clock local for Windows dual boot system
   become: true
@@ -50,15 +56,15 @@
     name: Asia/Tokyo
     hwclock: local
 
-- name: setting for winbind
-  become: true
-  ansible.builtin.replace:
-    path: /etc/nsswitch.conf
-    regexp: " dns$"
-    replace: " dns wins"
+# - name: setting for winbind
+#   become: true
+#   ansible.builtin.replace:
+#     path: /etc/nsswitch.conf
+#     regexp: " dns$"
+#     replace: " dns wins"
 
 - import_tasks: browser.yml
-- import_tasks: multimedia.yml
-- import_tasks: cinnamon.yml
+# - import_tasks: multimedia.yml
+# - import_tasks: cinnamon.yml
 - import_tasks: vscode.yml
-- import_tasks: antigravity.yml
+# - import_tasks: antigravity.yml
