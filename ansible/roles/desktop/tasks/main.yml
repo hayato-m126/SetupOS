@@ -50,11 +50,11 @@
 #     line: HandleLidSwitch=ignore
 #     insertafter: EOF
 
-- name: set clock local for Windows dual boot system
-  become: true
-  community.general.timezone:
-    name: Asia/Tokyo
-    hwclock: local
+# - name: set clock local for Windows dual boot system
+#   become: true
+#   community.general.timezone:
+#     name: Asia/Tokyo
+#     hwclock: local
 
 # - name: setting for winbind
 #   become: true
