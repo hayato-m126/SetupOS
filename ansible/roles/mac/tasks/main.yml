@@ -20,6 +20,20 @@
     - wget
     - zstd
 
+- name: add Homebrew bash to valid shells
+  ansible.builtin.lineinfile:
+    path: /etc/shells
+    line: /opt/homebrew/bin/bash
+    state: present
+    create: yes
+  become: true
+
+- name: set default shell to Homebrew bash
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    shell: /opt/homebrew/bin/bash
+  become: true
+
 - name: install homebrew cask packages
   community.general.homebrew_cask:
     name: "{{ item }}"
