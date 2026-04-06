@@ -1,8 +1,3 @@
-- name: add brew path
-  ansible.builtin.lineinfile:
-    path: ~/.zprofile
-    line: eval "$(/opt/homebrew/bin/brew shellenv)"
-
 - name: update homebrew
   community.general.homebrew:
     update_homebrew: true
@@ -13,7 +8,7 @@
     state: present
   with_items:
     - 1password-cli
-    - fish
+    - bash
     - gh
     - git
     - git-lfs
@@ -44,12 +39,6 @@
     - thunderbird
     - visual-studio-code
     - zen-browser
-
-- name: install fisher
-  ansible.builtin.shell: curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-  args:
-    executable: /opt/homebrew/bin/fish
-    creates: "{{ ansible_facts['env']['HOME'] }}/.config/fish/functions/fisher.fish"
 
 - name: install mise
   ansible.builtin.shell: curl https://mise.jdx.dev/install.sh | sh
