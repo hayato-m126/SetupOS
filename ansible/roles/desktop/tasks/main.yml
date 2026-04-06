@@ -18,6 +18,13 @@
       - zstd
     update_cache: true
 
+- name: install ghostty using snap
+  become: true
+  community.general.snap:
+    name: ghostty
+    state: present
+    classic: true
+
 - name: add grub-customizer ppa
   become: true
   ansible.builtin.apt_repository:
