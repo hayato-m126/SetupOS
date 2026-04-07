@@ -25,7 +25,7 @@
     path: /etc/shells
     line: /opt/homebrew/bin/bash
     state: present
-    create: yes
+    create: true
   become: true
 
 - name: set default shell to Homebrew bash
