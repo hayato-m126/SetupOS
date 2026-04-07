@@ -1,8 +1,3 @@
-- name: add brew path
-  ansible.builtin.lineinfile:
-    path: ~/.zprofile
-    line: eval "$(/opt/homebrew/bin/brew shellenv)"
-
 - name: update homebrew
   community.general.homebrew:
     update_homebrew: true
@@ -13,7 +8,7 @@
     state: present
   with_items:
     - 1password-cli
-    - fish
+    - bash
     - gh
     - git
     - git-lfs
@@ -24,6 +19,20 @@
     - tree
     - wget
     - zstd
+
+- name: add Homebrew bash to valid shells
+  ansible.builtin.lineinfile:
+    path: /etc/shells
+    line: /opt/homebrew/bin/bash
+    state: present
+    create: true
+  become: true
+
+- name: set default shell to Homebrew bash
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    shell: /opt/homebrew/bin/bash
+  become: true
 
 - name: install homebrew cask packages
   community.general.homebrew_cask:
@@ -44,12 +53,6 @@
     - thunderbird
     - visual-studio-code
     - zen-browser
-
-- name: install fisher
-  ansible.builtin.shell: curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-  args:
-    executable: /opt/homebrew/bin/fish
-    creates: "{{ ansible_facts['env']['HOME'] }}/.config/fish/functions/fisher.fish"
 
 - name: install mise
   ansible.builtin.shell: curl https://mise.jdx.dev/install.sh | sh
