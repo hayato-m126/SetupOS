@@ -9,7 +9,7 @@
   with_items:
     - 1password-cli
     - bash
-    - bash-completion
+    - bash-completion@2
     - gh
     - git
     - git-lfs
