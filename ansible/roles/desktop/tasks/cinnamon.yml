@@ -16,4 +16,3 @@
     key: "/org/cinnamon/desktop/wm/preferences/mouse-button-zoom-modifier" # yamllint disable-line rule:quoted-strings
     value: "'<Super>'" # yamllint disable-line rule:quoted-strings
     state: present
-
