@@ -12,15 +12,24 @@
       - net-tools
       - ncdu
       - tree
-      #- flatpak
-      #- gnome-software-plugin-flatpak
     update_cache: true
 
-# - name: Add Flathub remote
-#   become: true
-#   community.general.flatpak_remote:
-#     name: flathub
-#     state: present
-#     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+- name: install system tools (non-AWS) using apt
+  become: true
+  ansible.builtin.apt:
+    name:
+      - flatpak
+      - gnome-software-plugin-flatpak
+    update_cache: true
+  when: prompt_aws != 'y'
 
-#- import_tasks: fish.yml
+- name: Add Flathub remote
+  become: true
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+  when: prompt_aws != 'y'
+
+- import_tasks: fish.yml
+  when: prompt_aws != 'y'

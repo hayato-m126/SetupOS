@@ -1,21 +1,24 @@
-# - name: add chrome apt key
-#   become: true
-#   ansible.builtin.apt_key:
-#     url: https://dl-ssl.google.com/linux/linux_signing_key.pub
-#     state: present
+- name: add chrome apt key
+  become: true
+  ansible.builtin.apt_key:
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+    state: present
+  when: prompt_aws != 'y'
 
-# - name: add chrome apt repository
-#   become: true
-#   ansible.builtin.apt_repository:
-#     repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
-#     filename: google-chrome
-#     state: present
+- name: add chrome apt repository
+  become: true
+  ansible.builtin.apt_repository:
+    repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+    filename: google-chrome
+    state: present
+  when: prompt_aws != 'y'
 
-# - name: install google-chrome
-#   become: true
-#   ansible.builtin.apt:
-#     name: google-chrome-stable
-#     update_cache: true
+- name: install google-chrome
+  become: true
+  ansible.builtin.apt:
+    name: google-chrome-stable
+    update_cache: true
+  when: prompt_aws != 'y'
 
 - name: add microsoft edge apt key
   become: true
@@ -36,28 +39,32 @@
     name: microsoft-edge-stable
     update_cache: true
 
-# - name: download brave keyring
-#   become: true
-#   ansible.builtin.get_url:
-#     url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-#     dest: /usr/share/keyrings/brave-browser-archive-keyring.gpg
-#     mode: "0644"
+- name: download brave keyring
+  become: true
+  ansible.builtin.get_url:
+    url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+    dest: /usr/share/keyrings/brave-browser-archive-keyring.gpg
+    mode: "0644"
+  when: prompt_aws != 'y'
 
-# - name: add brave apt repository
-#   become: true
-#   ansible.builtin.apt_repository:
-#     repo: deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main
-#     filename: brave-browser-release
-#     state: present
+- name: add brave apt repository
+  become: true
+  ansible.builtin.apt_repository:
+    repo: deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main
+    filename: brave-browser-release
+    state: present
+  when: prompt_aws != 'y'
 
-# - name: install brave-browser
-#   become: true
-#   ansible.builtin.apt:
-#     name: brave-browser
-#     update_cache: true
+- name: install brave-browser
+  become: true
+  ansible.builtin.apt:
+    name: brave-browser
+    update_cache: true
+  when: prompt_aws != 'y'
 
-# - name: install zen browser
-#   become: true
-#   community.general.flatpak:
-#     name: app.zen_browser.zen
-#     state: present
+- name: install zen browser
+  become: true
+  community.general.flatpak:
+    name: app.zen_browser.zen
+    state: present
+  when: prompt_aws != 'y'
