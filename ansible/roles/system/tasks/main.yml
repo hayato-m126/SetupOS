@@ -31,5 +31,3 @@
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
   when: prompt_aws != 'y'
 
-- import_tasks: fish.yml
-  when: prompt_aws != 'y'

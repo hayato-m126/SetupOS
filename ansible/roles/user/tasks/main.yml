@@ -1,4 +1,3 @@
 - import_tasks: ../../desktop/tasks/cinnamon.yml
-- import_tasks: ../../system/tasks/fish.yml
 - import_tasks: ../../system/tasks/setting.yml
 - import_tasks: ../../system/tasks/mise.yml
