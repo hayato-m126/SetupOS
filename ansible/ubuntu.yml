@@ -2,6 +2,9 @@
   hosts: localhost
   connection: local
   vars_prompt:
+    - name: prompt_aws
+      prompt: Is target environment AWS? [y/N]
+      private: false
     - name: prompt_wsl
       prompt: Is target environment WSL? [y/N]
       private: false

@@ -6,17 +6,23 @@
   ansible.builtin.apt:
     name:
       - dconf-editor
-      - exfatprogs
       - gedit
       - gparted
       - hardinfo
       - libfuse2 # https://syohex.hatenablog.com/entry/2022/05/02/230822
       - meld
-      - terminator
-      - thunderbird-locale-ja
-      - winbind
       - zstd
     update_cache: true
+
+- name: install desktop tools (non-AWS) using apt
+  become: true
+  ansible.builtin.apt:
+    name:
+      - exfatprogs
+      - thunderbird-locale-ja
+      - winbind
+    update_cache: true
+  when: prompt_aws != 'y'
 
 - name: install ghostty using snap
   become: true
@@ -30,12 +36,14 @@
   ansible.builtin.apt_repository:
     repo: ppa:danielrichter2007/grub-customizer
     state: present
+  when: prompt_aws != 'y'
 
 - name: install grub-customizer
   become: true
   ansible.builtin.apt:
     name: grub-customizer
     update_cache: true
+  when: prompt_aws != 'y'
 
 - name: disable sleep when close note pc display
   become: true
@@ -43,12 +51,14 @@
     path: /etc/systemd/logind.conf
     line: HandleLidSwitch=ignore
     insertafter: EOF
+  when: prompt_aws != 'y'
 
 - name: set clock local for Windows dual boot system
   become: true
   community.general.timezone:
     name: Asia/Tokyo
     hwclock: local
+  when: prompt_aws != 'y'
 
 - name: setting for winbind
   become: true
@@ -56,9 +66,11 @@
     path: /etc/nsswitch.conf
     regexp: " dns$"
     replace: " dns wins"
+  when: prompt_aws != 'y'
 
 - import_tasks: browser.yml
 - import_tasks: multimedia.yml
+  when: prompt_aws != 'y'
 - import_tasks: cinnamon.yml
+  when: prompt_aws != 'y'
 - import_tasks: vscode.yml
-- import_tasks: antigravity.yml
