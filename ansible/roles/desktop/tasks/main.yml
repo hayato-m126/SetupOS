@@ -11,7 +11,6 @@
       - hardinfo
       - libfuse2 # https://syohex.hatenablog.com/entry/2022/05/02/230822
       - meld
-      - terminator
       - zstd
     update_cache: true
 
