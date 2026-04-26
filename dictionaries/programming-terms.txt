@@ -137,5 +137,6 @@ Xorg
 xrdp
 xsession
 xset
+Yaru
 zoneinfo
 zstd
