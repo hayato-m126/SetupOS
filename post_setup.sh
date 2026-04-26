@@ -1,11 +1,7 @@
 #!/bin/bash
 
-if [ -f "$HOME/.ssh/github_ed25519" ]; then
-    bash "$HOME/.dotfiles/install.sh"
-    mise install -y
-else
-    echo "$HOME/.ssh/github_ed25519 not found"
-fi
+bash "$HOME/.dotfiles/install.sh"
+mise install -y
 
 echo "Do you want install python cli tools using uv? (y/n)"
 read -r answer
