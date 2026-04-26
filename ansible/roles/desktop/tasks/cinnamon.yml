@@ -23,6 +23,12 @@
     value: "'<Super>'" # yamllint disable-line rule:quoted-strings
     state: present
 
+- name: set icon theme
+  community.general.dconf:
+    key: "/org/cinnamon/desktop/interface/icon-theme" # yamllint disable-line rule:quoted-strings
+    value: "'Yaru'" # yamllint disable-line rule:quoted-strings
+    state: present
+
 - name: set start menu favorite
   community.general.dconf:
     key: "/org/cinnamon/favorite-apps" # yamllint disable-line rule:quoted-strings
