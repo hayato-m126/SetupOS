@@ -10,10 +10,26 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup Python
         uses: actions/setup-python@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+
+      - name: Checkout dotfiles
+        uses: actions/checkout@v6
+        with:
+          repository: hayato-m126/dotfiles
+          path: dotfiles-tmp
+
+      - name: Setup cspell dictionaries from dotfiles
+        run: |
+          mkdir -p ~/.config
+          ln -snfv ${{ github.workspace }}/dotfiles-tmp/HOME/.config/cspell ~/.config/cspell
 
       - name: Run pre-commit
         uses: pre-commit/action@v3.0.1
