@@ -12,6 +12,8 @@ sudo nvram BootPreference=%00
 
 ## キーボードの配置を入れ替えてwindowsの操作感に近づける
 
+### 内蔵キーボード、Magic Keyboard
+
 設定 -> キーボード -> キーボードショートカット -> 修飾キー
 
 - Caps Lock -> Command
@@ -20,6 +22,12 @@ sudo nvram BootPreference=%00
 - Command -> Option
 
 ![key_remap](./pic/key_remap.png)
+
+### logicool K950
+
+- Control -> Command
+- Option -> Control
+- Command -> Option
 
 ## ショートカット入れ替え
 
