@@ -1,6 +1,6 @@
 # windows
 
-macとwindowsを併用するためのtips
+mac, ubuntu, windowsを併用するためのtips
 
 ## 変換無変換で入力を切り替える
 
@@ -37,4 +37,35 @@ shell:AppsFolder
 
 ```shell
 reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+```
+
+## Ubuntuとのデュアルブート解除後にEFIにubuntuのローダーが残る
+
+WindowsのEFIパーティションにEFI/ubuntuというののが残っている
+USB bootのubuntuでパーティションをマウントして丸ごと消す。
+
+```shell
+mkdir mnt
+cd mnt
+sudo mount -t vfat /dev/nvme0n1p1 . -o uid=$(id -u),gid=$(id -g),umask=022
+cd EFI
+sudo rm -rf ubuntu
+```
+
+Windows側でコマンドうってエントリーを消す。
+PowerShellで実施するときはダブルクォートで括る
+
+```shell
+bcdedit /enum firmware
+
+identifier              {cf26aa51-b179-11ef-98d4-806e6f6e6963}
+device                  partition=\Device\HardDiskVolume1
+path                    \EFI\ubuntu\shimx64.efi
+description             ubuntu
+
+# bcdedit /delete {id}
+bcdedit /delete {cf26aa51-b179-11ef-98d4-806e6f6e6963}
+
+# PowerShell
+bcdedit /delete "{cf26aa51-b179-11ef-98d4-806e6f6e6963}"
 ```
