@@ -59,3 +59,11 @@ On Ubuntu 24.04, if you set up Chrome Remote Desktop, you can log in remotely, b
 An error message `session already running` appears.
 
 <https://askubuntu.com/questions/1516121/cant-login-session-already-running>
+
+## known issue for 26.04
+
+### ansible
+
+become true not working.
+
+<https://www.reddit.com/r/ansible/comments/1t6ie61/become_true_not_working_with_ubuntu_2604_lts/>
