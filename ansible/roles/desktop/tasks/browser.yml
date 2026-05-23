@@ -1,9 +1,26 @@
+- name: remove chrome apt repository (arm64 not supported)
+  become: true
+  ansible.builtin.apt_repository:
+    repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+    filename: google-chrome
+    state: absent
+  when: ansible_facts['architecture'] != 'x86_64'
+
+- name: remove chrome apt key (arm64 not supported)
+  become: true
+  ansible.builtin.apt_key:
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+    state: absent
+  when: ansible_facts['architecture'] != 'x86_64'
+
 - name: add chrome apt key
   become: true
   ansible.builtin.apt_key:
     url: https://dl-ssl.google.com/linux/linux_signing_key.pub
     state: present
-  when: prompt_aws != 'y'
+  when:
+    - prompt_aws != 'y'
+    - ansible_facts['architecture'] == 'x86_64'
 
 - name: add chrome apt repository
   become: true
@@ -11,14 +28,18 @@
     repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
     filename: google-chrome
     state: present
-  when: prompt_aws != 'y'
+  when:
+    - prompt_aws != 'y'
+    - ansible_facts['architecture'] == 'x86_64'
 
 - name: install google-chrome
   become: true
   ansible.builtin.apt:
     name: google-chrome-stable
     update_cache: true
-  when: prompt_aws != 'y'
+  when:
+    - prompt_aws != 'y'
+    - ansible_facts['architecture'] == 'x86_64'
 
 - name: add microsoft edge apt key
   become: true
