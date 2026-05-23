@@ -31,13 +31,6 @@
     state: present
     classic: true
 
-- name: remove grub-customizer ppa (arm64 not supported)
-  become: true
-  ansible.builtin.apt_repository:
-    repo: ppa:danielrichter2007/grub-customizer
-    state: absent
-  when: ansible_facts['architecture'] != 'x86_64'
-
 - name: add grub-customizer ppa
   become: true
   ansible.builtin.apt_repository:
@@ -81,10 +74,12 @@
 
 - import_tasks: browser.yml
   when: ansible_facts['architecture'] == 'x86_64'
+
 - import_tasks: multimedia.yml
   when:
     - prompt_aws != 'y'
     - ansible_facts['architecture'] == 'x86_64'
+
 - import_tasks: cinnamon.yml
   when: prompt_aws != 'y'
 - import_tasks: vscode.yml

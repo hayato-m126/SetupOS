@@ -1,13 +1,3 @@
-- name: Remove Ubuntu Japanese repository (arm64 not supported)
-  become: true
-  ansible.builtin.file:
-    path: "{{ item }}"
-    state: absent
-  loop:
-    - /etc/apt/sources.list.d/ubuntu-ja.sources
-    - /etc/apt/sources.list.d/ubuntu-ja.list
-  when: ansible_facts['architecture'] != 'x86_64'
-
 - name: Add Ubuntu Japanese PPA keyring
   become: true
   ansible.builtin.apt_key:
