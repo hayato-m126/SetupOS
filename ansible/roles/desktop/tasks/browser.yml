@@ -3,7 +3,7 @@
   ansible.builtin.apt_key:
     url: https://dl-ssl.google.com/linux/linux_signing_key.pub
     state: present
-  when: prompt_aws != 'y'
+  when: prompt_aws != 'y' and ansible_architecture != 'aarch64'
 
 - name: add chrome apt repository
   become: true
@@ -11,14 +11,14 @@
     repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
     filename: google-chrome
     state: present
-  when: prompt_aws != 'y'
+  when: prompt_aws != 'y' and ansible_architecture != 'aarch64'
 
 - name: install google-chrome
   become: true
   ansible.builtin.apt:
     name: google-chrome-stable
     update_cache: true
-  when: prompt_aws != 'y'
+  when: prompt_aws != 'y' and ansible_architecture != 'aarch64'
 
 - name: add microsoft edge apt key
   become: true
@@ -29,7 +29,7 @@
 - name: add microsoft edge apt repository
   become: true
   ansible.builtin.apt_repository:
-    repo: deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main
+    repo: "deb [arch={{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}] https://packages.microsoft.com/repos/edge stable main"
     filename: microsoft-edge
     state: present
 
