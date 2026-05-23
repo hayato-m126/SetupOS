@@ -31,6 +31,13 @@
     state: present
     classic: true
 
+- name: remove grub-customizer ppa (arm64 not supported)
+  become: true
+  ansible.builtin.apt_repository:
+    repo: ppa:danielrichter2007/grub-customizer
+    state: absent
+  when: ansible_facts['architecture'] != 'x86_64'
+
 - name: add grub-customizer ppa
   become: true
   ansible.builtin.apt_repository:
