@@ -1,7 +1,3 @@
-- name: set VS Code repo architecture
-  ansible.builtin.set_fact:
-    vscode_arch: "{{ 'arm64' if ansible_facts['architecture'] == 'aarch64' else 'amd64' }}"
-
 - name: add vscode key
   become: true
   ansible.builtin.apt_key:
@@ -11,7 +7,7 @@
 - name: add VS Code repo
   become: true
   ansible.builtin.apt_repository:
-    repo: "deb [arch={{ vscode_arch }}] https://packages.microsoft.com/repos/vscode stable main"
+    repo: deb [arch={{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}] https://packages.microsoft.com/repos/vscode stable main
     filename: vscode
     state: present
 
