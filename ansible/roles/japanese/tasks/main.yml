@@ -3,33 +3,48 @@
   ansible.builtin.apt_key:
     url: https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg
     state: present
-  when: ansible_facts['distribution_release'] == 'jammy'
+  when:
+    - ansible_facts['distribution_release'] == 'jammy'
+    - ansible_facts['architecture'] == 'x86_64'
 
 - name: Add Ubuntu Japanese archive keyring
   become: true
   ansible.builtin.apt_key:
     url: https://www.ubuntulinux.jp/ubuntu-ja-archive-keyring.gpg
     state: present
-  when: ansible_facts['distribution_release'] == 'jammy'
+  when:
+    - ansible_facts['distribution_release'] == 'jammy'
+    - ansible_facts['architecture'] == 'x86_64'
 
 - name: Download Ubuntu Japanese repository
   become: true
   ansible.builtin.get_url:
     url: https://www.ubuntulinux.jp/sources.list.d/jammy.list
     dest: /etc/apt/sources.list.d/ubuntu-ja.list
-  when: ansible_facts['distribution_release'] == 'jammy'
+  when:
+    - ansible_facts['distribution_release'] == 'jammy'
+    - ansible_facts['architecture'] == 'x86_64'
 
 - name: Download Ubuntu Japanese repository
   become: true
   ansible.builtin.get_url:
     url: https://www.ubuntulinux.jp/sources.list.d/noble.sources
     dest: /etc/apt/sources.list.d/ubuntu-ja.sources
-  when: ansible_facts['distribution_release'] == 'noble'
+  when:
+    - ansible_facts['distribution_release'] == 'noble'
+    - ansible_facts['architecture'] == 'x86_64'
+
+- name: install ja package (x86_64 only)
+  become: true
+  ansible.builtin.apt:
+    name:
+      - ubuntu-defaults-ja
+    update_cache: true
+  when: ansible_facts['architecture'] == 'x86_64'
 
 - name: install ja package
   become: true
   ansible.builtin.apt:
     name:
-      - ubuntu-defaults-ja
       - language-pack-ja
     update_cache: true

@@ -36,14 +36,18 @@
   ansible.builtin.apt_repository:
     repo: ppa:danielrichter2007/grub-customizer
     state: present
-  when: prompt_aws != 'y'
+  when:
+    - prompt_aws != 'y'
+    - ansible_facts['architecture'] == 'x86_64'
 
 - name: install grub-customizer
   become: true
   ansible.builtin.apt:
     name: grub-customizer
     update_cache: true
-  when: prompt_aws != 'y'
+  when:
+    - prompt_aws != 'y'
+    - ansible_facts['architecture'] == 'x86_64'
 
 - name: disable sleep when close note pc display
   become: true
@@ -69,8 +73,12 @@
   when: prompt_aws != 'y'
 
 - import_tasks: browser.yml
+
 - import_tasks: multimedia.yml
-  when: prompt_aws != 'y'
+  when:
+    - prompt_aws != 'y'
+    - ansible_facts['architecture'] == 'x86_64'
+
 - import_tasks: cinnamon.yml
   when: prompt_aws != 'y'
 - import_tasks: vscode.yml
