@@ -80,8 +80,11 @@
   when: prompt_aws != 'y'
 
 - import_tasks: browser.yml
+  when: ansible_facts['architecture'] == 'x86_64'
 - import_tasks: multimedia.yml
-  when: prompt_aws != 'y'
+  when:
+    - prompt_aws != 'y'
+    - ansible_facts['architecture'] == 'x86_64'
 - import_tasks: cinnamon.yml
   when: prompt_aws != 'y'
 - import_tasks: vscode.yml
