@@ -13,10 +13,6 @@ RPi5で動くQNXのTIPS
 
 ### 日本語キーボードの一部が認識しない
 
-公式の設定どおりにやっても、¥ ] _ 半角全角がだめ
-
-```shell
-sudo nano /usr/lib/graphics/drm-rpi5/graphics-rpi5-2xhdmi.conf
-```
+公式の設定どおりにやっても、¥ ] \_ 半角全角がだめ
 
 keymap = /usr/share/keyboard/ja_JP_106
