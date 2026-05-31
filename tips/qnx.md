@@ -9,6 +9,20 @@ RPi5で動くQNXのTIPS
 - <https://www.qnx.com/developers/docs/qnxeverywhere/com.qnx.doc.target_images/topic/qsti/next-steps.html>
 - <https://www.qnx.com/developers/docs/qnxeverywhere/com.qnx.doc.target_images/topic/qsti/qnxos_on_rpi.html>
 
+## シャットダウン
+
+シャットダウンしても、LEDランプの色変わらないし、ファンも回り続ける。
+pingとかで確かめてから電源ケーブル抜く
+
+```shell
+# シャットダウン
+sudo shutdown -b
+
+# 再起動
+sudo shutdown
+sudo shutdown -S reboot
+```
+
 ## 困りごと
 
 ### 日本語キーボードの一部が認識しない
