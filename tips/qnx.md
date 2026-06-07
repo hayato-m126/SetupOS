@@ -23,6 +23,17 @@ sudo shutdown
 sudo shutdown -S reboot
 ```
 
+## ssh設定
+
+```shell
+Host qnxpi
+  HostName qnxpi.local
+  User qnxuser
+  MACs hmac-sha2-256
+  PasswordAuthentication yes
+  StrictHostKeyChecking ask
+```
+
 ## 困りごと
 
 ### 日本語キーボードの一部が認識しない
