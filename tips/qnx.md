@@ -34,6 +34,19 @@ Host qnxpi
   StrictHostKeyChecking ask
 ```
 
+## Momentics theme
+
+UbuntuでOS側がダークテーマを使っていると、表示がおかしくなる。
+
+![Momentics Theme](./pic/momentics_theme.png)
+
+起動用のショートカットに環境変数追加してLightを強制する
+
+```shell
+# qde.desktop
+Exec=env GTK_THEME=Adwaita /home/hyt/qnx/qnxmomenticside/qde
+```
+
 ## 困りごと
 
 ### 日本語キーボードの一部が認識しない
