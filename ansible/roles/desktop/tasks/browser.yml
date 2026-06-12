@@ -1,14 +1,15 @@
-- name: add chrome apt key
+- name: download chrome keyring
   become: true
-  ansible.builtin.apt_key:
-    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
-    state: present
+  ansible.builtin.shell: |
+    curl -fsSL https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/google-chrome-keyring.gpg
+  args:
+    creates: /usr/share/keyrings/google-chrome-keyring.gpg
   when: prompt_aws != 'y' and ansible_architecture != 'aarch64'
 
 - name: add chrome apt repository
   become: true
   ansible.builtin.apt_repository:
-    repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+    repo: deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main
     filename: google-chrome
     state: present
   when: prompt_aws != 'y' and ansible_architecture != 'aarch64'
@@ -20,17 +21,18 @@
     update_cache: true
   when: prompt_aws != 'y' and ansible_architecture != 'aarch64'
 
-- name: add microsoft edge apt key
+- name: download microsoft edge keyring
   become: true
-  ansible.builtin.apt_key:
-    url: https://packages.microsoft.com/keys/microsoft.asc
-    state: present
+  ansible.builtin.shell: |
+    curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-edge-keyring.gpg
+  args:
+    creates: /usr/share/keyrings/microsoft-edge-keyring.gpg
   when: ansible_architecture != 'aarch64'
 
 - name: add microsoft edge apt repository
   become: true
   ansible.builtin.apt_repository:
-    repo: deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main
+    repo: deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-edge-keyring.gpg] https://packages.microsoft.com/repos/edge stable main
     filename: microsoft-edge
     state: present
   when: ansible_architecture != 'aarch64'
