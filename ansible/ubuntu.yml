@@ -18,7 +18,7 @@
       prompt: Set up robotics development tools? [y/N]
       private: false
   roles:
-    - role: japanese
+    # - role: japanese
     - role: wsl
       when: prompt_wsl == 'y'
     - role: dotfiles
