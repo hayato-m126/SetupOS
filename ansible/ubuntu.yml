@@ -1,6 +1,9 @@
 - name: setup local machine
   hosts: localhost
   connection: local
+  vars:
+    # Ubuntu 26.04 replaces the default sudo with sudo-rs, so use the legacy sudo.ws binary for become.
+    ansible_become_exe: "{{ 'sudo.ws' if (ansible_distribution == 'Ubuntu' and ansible_distribution_version == '26.04') else 'sudo' }}"
   vars_prompt:
     - name: prompt_aws
       prompt: Is target environment AWS? [y/N]
