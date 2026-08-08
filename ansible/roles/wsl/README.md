@@ -24,6 +24,6 @@ gh auth login --web
 
 ghのログイン情報移行するには、ghの設定ファイルだけコピーしてくればOK
 
-```shel
+```shell
 $HOME/.config/gh
 ```
