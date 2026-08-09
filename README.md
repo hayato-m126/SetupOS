@@ -26,7 +26,7 @@ W: ターゲット CNF (main/cnf/Commands-all) は /etc/apt/sources.list.d/googl
 
 ## Support OS
 
-- Ubuntu 22.04 / 24.04 LTS
+- Ubuntu 22.04 / 24.04 / 26.04 LTS
 - macOS Sonoma / Sequoia
 
 ## how to create Ubuntu install media
@@ -50,20 +50,3 @@ Copy `github_rsa` beforehand.
 ```shell
 ./setup.sh
 ```
-
-## known issue for 24.04
-
-### chrome-remote-desktop
-
-On Ubuntu 24.04, if you set up Chrome Remote Desktop, you can log in remotely, but you cannot log in locally with a display attached.
-An error message `session already running` appears.
-
-<https://askubuntu.com/questions/1516121/cant-login-session-already-running>
-
-## known issue for 26.04
-
-### ansible
-
-become true not working.
-
-<https://www.reddit.com/r/ansible/comments/1t6ie61/become_true_not_working_with_ubuntu_2604_lts/>
