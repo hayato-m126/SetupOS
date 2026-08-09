@@ -10,7 +10,7 @@ ubuntuを入れるとき、UEFIが設定がデフォルトで`Microsoft Windows`
 
 ![Hyper-V UEFI error](./pic/hyper-v-uefi-error.png)
 
-設定を`Miscrosoft UEFI 証明期間`に変更すると起動する
+設定を`Microsoft UEFI 証明期間`に変更すると起動する
 
 ![Hyper-V setting](./pic/hyper-v-secure-boot.png)
 
