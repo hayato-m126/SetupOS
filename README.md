@@ -50,3 +50,11 @@ Copy `github_rsa` beforehand.
 ```shell
 ./setup.sh
 ```
+
+## known issue for 26.04
+
+### ansible
+
+apt_repository is not working.
+
+<https://askubuntu.com/questions/1566955/how-to-adapt-apt-repository-in-ansible-in-ubuntu-26-04>
