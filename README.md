@@ -26,8 +26,8 @@ W: ターゲット CNF (main/cnf/Commands-all) は /etc/apt/sources.list.d/googl
 
 ## Support OS
 
-- Ubuntu 22.04 / 24.04 / 26.04 LTS
-- macOS Sonoma / Sequoia
+- Ubuntu 22.04 / 24.04 / 26.04 WSL only
+- macOS 26
 
 ## how to create Ubuntu install media
 
