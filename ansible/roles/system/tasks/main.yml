@@ -12,6 +12,7 @@
       - net-tools
       - ncdu
       - tree
+      - gnome-shell-extension-manager
     update_cache: true
 
 - name: install system tools (non-AWS) using apt
