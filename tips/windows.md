@@ -69,3 +69,13 @@ bcdedit /delete {cf26aa51-b179-11ef-98d4-806e6f6e6963}
 # PowerShell
 bcdedit /delete "{cf26aa51-b179-11ef-98d4-806e6f6e6963}"
 ```
+
+## Windows Terminalの右クリックをメニューにする
+
+```json
+    "profiles": 
+    {
+        "defaults": {
+            "experimental.rightClickContextMenu": true
+        },
+```
