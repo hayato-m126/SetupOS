@@ -4,7 +4,6 @@
     name:
       - flameshot
       - kolourpaint
-      - libxcb-cursor0 # calibre dependency
       - obs-studio
       - vlc
     update_cache: true
