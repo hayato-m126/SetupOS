@@ -9,17 +9,34 @@
       - lsb-release
     update_cache: true
 
+- name: ensure apt keyrings directory exists
+  become: true
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: "0755"
+
 - name: download docker keyring
   become: true
-  ansible.builtin.shell: |
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-  args:
-    creates: /etc/apt/keyrings/docker.gpg
+  ansible.builtin.get_url:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    dest: /etc/apt/keyrings/docker.asc
+    mode: "0644"
+    force: true
 
+- name: remove stale docker keyring
+  become: true
+  ansible.builtin.file:
+    path: /etc/apt/keyrings/docker.gpg
+    state: absent
+
+# apt_repository does not overwrite the file, causing duplicate/conflicting Signed-By entries on re-run
 - name: add docker repository
   become: true
-  ansible.builtin.apt_repository:
-    repo: deb [arch={{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }} signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu {{ ansible_facts['distribution_release'] }} stable
+  ansible.builtin.copy:
+    dest: /etc/apt/sources.list.d/download_docker_com_linux_ubuntu.list
+    content: "deb [arch={{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }} signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu {{ ansible_facts['distribution_release'] }} stable\n"
+    mode: "0644"
 
 - name: install docker
   become: true
