@@ -42,9 +42,11 @@
     install_options: appdir=/Applications
   with_items:
     - 1password
+    - activitywatch
     - brave-browser
     # - calibre
     - discord
+    - github-copilot-app
     - ghostty
     - google-japanese-ime
     - microsoft-edge
