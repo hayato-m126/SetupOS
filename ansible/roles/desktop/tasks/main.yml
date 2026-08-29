@@ -82,3 +82,4 @@
 - import_tasks: cinnamon.yml
   when: prompt_aws != 'y'
 - import_tasks: vscode.yml
+- import_tasks: tracker.yml
