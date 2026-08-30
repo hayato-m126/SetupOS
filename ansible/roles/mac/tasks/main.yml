@@ -46,14 +46,15 @@
     - brave-browser
     # - calibre
     - discord
-    - github-copilot-app
     - ghostty
+    - github-copilot-app
     - google-japanese-ime
     - meld
     - microsoft-edge
     - obs
     - openvpn-connect
     - parallels-client
+    - rectangle
     - thunderbird
     - visual-studio-code
     - zen-browser
