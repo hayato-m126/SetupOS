@@ -13,7 +13,19 @@
       - ncdu
       - tree
       - gnome-shell-extension-manager
+      - gawk
+      - make
     update_cache: true
+
+- name: install ble.sh
+  ansible.builtin.shell: |
+    set -e
+    tmpdir=$(mktemp -d)
+    git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git "$tmpdir"
+    make -C "$tmpdir" install PREFIX="{{ ansible_facts['env']['HOME'] }}/.local"
+    rm -rf "$tmpdir"
+  args:
+    creates: "{{ ansible_facts['env']['HOME'] }}/.local/share/blesh/ble.sh"
 
 - name: install system tools (non-AWS) using apt
   become: true
