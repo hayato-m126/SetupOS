@@ -10,6 +10,7 @@
     - 1password-cli
     - bash
     - bash-completion@2
+    - gawk
     - gh
     - git
     - git-lfs
