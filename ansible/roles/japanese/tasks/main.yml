@@ -40,7 +40,10 @@
     name:
       - ubuntu-defaults-ja
     update_cache: true
-  when: ansible_facts['architecture'] == 'x86_64'
+  # only available via the Ubuntu Japanese Team repository, which doesn't yet support other releases
+  when:
+    - ansible_facts['architecture'] == 'x86_64'
+    - ansible_facts['distribution_release'] in ['jammy', 'noble']
 
 - name: install ja package
   become: true
