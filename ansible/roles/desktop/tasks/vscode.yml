@@ -1,13 +1,14 @@
-- name: add vscode key
+- name: download vscode keyring
   become: true
-  ansible.builtin.apt_key:
-    url: https://packages.microsoft.com/keys/microsoft.asc
-    state: present
+  ansible.builtin.shell: |
+    curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-vscode-keyring.gpg
+  args:
+    creates: /usr/share/keyrings/microsoft-vscode-keyring.gpg
 
 - name: add VS Code repo
   become: true
   ansible.builtin.apt_repository:
-    repo: deb [arch={{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}] https://packages.microsoft.com/repos/vscode stable main
+    repo: deb [arch={{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }} signed-by=/usr/share/keyrings/microsoft-vscode-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main
     filename: vscode
     state: present
 
