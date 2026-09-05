@@ -28,3 +28,23 @@ grubでnomodesetを追加して起動する
 ## Nvidia Driverとカーネル
 
 Nvidia DriverはKernel 6系を使うと高確率で動かないので5系統にしておく
+
+## デスクトップをwindowsライクにする
+
+gnome-shell-extension-managerでdash to panelをインストールする
+設定でアプリケーションのグループ化を解除する
+
+![dash-to-panel](./pic/dash-to-panel.png)
+
+### デスクトップにショートカットアイコンを置く
+
+以下の場所から.desktopのファイルを$HOME/Desktopにコピーする
+
+- システム全体（aptなどパッケージ管理でインストール）: `/usr/share/applications/`
+- システム全体（手動インストール）: `/usr/local/share/applications/`
+- ユーザー個別: `$HOME/.local/share/applications/`
+- snapパッケージ: `/var/lib/snapd/desktop/applications/`
+- flatpak（システム全体）: `/var/lib/flatpak/exports/share/applications/`
+- flatpak（ユーザー個別）: `$HOME/.local/share/flatpak/exports/share/applications/`
+
+ghosttyは/var/lib/snapd/desktop/applications/
