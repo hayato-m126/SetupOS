@@ -97,7 +97,5 @@
     - prompt_aws != 'y'
     - ansible_facts['architecture'] == 'x86_64'
 
-- import_tasks: cinnamon.yml
-  when: prompt_aws != 'y'
 - import_tasks: vscode.yml
 - import_tasks: tracker.yml
