@@ -31,10 +31,21 @@
     state: present
     classic: true
 
+- name: download grub-customizer keyring
+  become: true
+  ansible.builtin.shell: |
+    curl -fsSL "https://keyserver.ubuntu.com/pks/lookup?op=get&exact=on&search=0x7EDB2B9AEE0757D787DFFC2014BEBC7363BDC51E" | gpg --dearmor -o /usr/share/keyrings/grub-customizer-keyring.gpg
+  args:
+    creates: /usr/share/keyrings/grub-customizer-keyring.gpg
+  when:
+    - prompt_aws != 'y'
+    - ansible_facts['architecture'] == 'x86_64'
+
 - name: add grub-customizer ppa
   become: true
   ansible.builtin.apt_repository:
-    repo: ppa:danielrichter2007/grub-customizer
+    repo: deb [signed-by=/usr/share/keyrings/grub-customizer-keyring.gpg] https://ppa.launchpadcontent.net/danielrichter2007/grub-customizer/ubuntu {{ ansible_facts['distribution_release'] }} main
+    filename: grub-customizer
     state: present
   when:
     - prompt_aws != 'y'
