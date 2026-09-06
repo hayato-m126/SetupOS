@@ -11,6 +11,7 @@ if [ "$answer" == "y" ]; then
     uv tool install argcomplete
     uv tool install vcstool
     uv tool install nvitop
+    uv tool install specify-cli --from git+https://github.com/github/spec-kit.git@v1.0.4
 else
     echo "cancel"
 fi
