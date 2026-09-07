@@ -88,7 +88,6 @@
   community.general.flatpak:
     name: it.mijorus.gearlever
     state: present
-  when: prompt_aws != 'y'
 
 - import_tasks: browser.yml
 

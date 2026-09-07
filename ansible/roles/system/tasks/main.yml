@@ -34,7 +34,6 @@
       - flatpak
       - gnome-software-plugin-flatpak
     update_cache: true
-  when: prompt_aws != 'y'
 
 - name: Add Flathub remote
   become: true
@@ -42,4 +41,3 @@
     name: flathub
     state: present
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
-  when: prompt_aws != 'y'
