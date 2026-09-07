@@ -1,7 +1,7 @@
 - name: clone dotfiles
   ansible.builtin.git:
     repo: https://github.com/hayato-m126/dotfiles.git
-    dest: ~/.dotfiles
+    dest: ~/ghq/github.com/hayato-m126/dotfiles
 
 - name: create .ssh directory
   ansible.builtin.file:

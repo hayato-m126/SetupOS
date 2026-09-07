@@ -39,6 +39,6 @@ export GIT_CONFIG_KEY_0=user.email
 export GIT_CONFIG_VALUE_0="hayato-m126@users.noreply.github.com"
 
 [hooks]
-enter = "gh auth switch --hostname github.com --user hayato-m126
-leave = "gh auth switch --hostname github.com --user main-id
+enter = "gh auth switch --hostname github.com --user hayato-m126"
+leave = "gh auth switch --hostname github.com --user main-id"
 ```
