@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bash "$HOME/.dotfiles/install.sh"
+bash "$HOME/ghq/github.com/hayato-m126/dotfiles/install.sh"
 mise install -y
 
 echo "Do you want install python cli tools using uv? (y/n)"
