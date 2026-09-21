@@ -60,7 +60,6 @@
     - rectangle
     - thunderbird
     - visual-studio-code
-    - zen-browser
 
 - name: install mise
   ansible.builtin.shell: curl https://mise.jdx.dev/install.sh | sh

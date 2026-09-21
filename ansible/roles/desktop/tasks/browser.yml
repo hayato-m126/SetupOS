@@ -67,9 +67,3 @@
     update_cache: true
   when: prompt_aws != 'y'
 
-- name: install zen browser
-  become: true
-  community.general.flatpak:
-    name: app.zen_browser.zen
-    state: present
-  when: prompt_aws != 'y'
