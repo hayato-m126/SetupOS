@@ -5,6 +5,7 @@
   become: true
   ansible.builtin.apt:
     name:
+      - bleachbit
       - dconf-editor
       - gedit
       - gparted
