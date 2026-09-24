@@ -10,27 +10,29 @@
     - name: prompt_aws
       prompt: Is target environment AWS? [y/N]
       private: false
-    - name: prompt_wsl
-      prompt: Is target environment WSL? [y/N]
-      private: false
     - name: prompt_desktop
       prompt: Is target environment is desktop(GUI)? [y/N]
-      private: false
-    - name: prompt_container
-      prompt: Set up Container Environment? [y/N]
       private: false
     - name: prompt_robotics
       prompt: Set up robotics development tools? [y/N]
       private: false
+  pre_tasks:
+    - name: check whether running under WSL
+      ansible.builtin.stat:
+        path: /run/WSL
+      register: wsl_run_dir
+    - name: set is_wsl fact
+      ansible.builtin.set_fact:
+        is_wsl: "{{ wsl_run_dir.stat.exists }}"
   roles:
     - role: japanese
     - role: wsl
-      when: prompt_wsl == 'y'
+      when: is_wsl
     - role: dotfiles
     - role: system
     - role: desktop
       when: prompt_desktop == 'y'
     - role: container
-      when: prompt_container == 'y'
+      when: not is_wsl
     - role: ros
       when: prompt_robotics == 'y'

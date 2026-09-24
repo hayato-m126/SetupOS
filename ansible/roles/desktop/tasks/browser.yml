@@ -66,4 +66,3 @@
     name: brave-browser
     update_cache: true
   when: prompt_aws != 'y'
-
