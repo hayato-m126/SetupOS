@@ -10,6 +10,9 @@
     - name: prompt_aws
       prompt: Is target environment AWS? [y/N]
       private: false
+    - name: prompt_docker
+      prompt: Set up Docker? [y/N]
+      private: false
     - name: prompt_desktop
       prompt: Is target environment is desktop(GUI)? [y/N]
       private: false
@@ -32,7 +35,7 @@
     - role: system
     - role: desktop
       when: prompt_desktop == 'y'
-    - role: container
-      when: not is_wsl
+    - role: docker
+      when: prompt_docker == 'y'
     - role: ros
       when: prompt_robotics == 'y'
