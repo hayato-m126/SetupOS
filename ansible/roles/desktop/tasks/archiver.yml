@@ -1,0 +1,30 @@
+- name: install peazip dependency
+  become: true
+  ansible.builtin.apt:
+    name:
+      - libqt6printsupport6 # peazip Qt dependency
+    update_cache: true
+
+- name: download peazip Qt deb
+  ansible.builtin.get_url:
+    url: https://github.com/peazip/PeaZip/releases/download/11.4.0/peazip_11.4.0.LINUX.Qt6-1_amd64.deb
+    dest: /tmp/peazip.deb
+
+- name: install peazip Qt deb package
+  become: true
+  ansible.builtin.apt:
+    deb: /tmp/peazip.deb
+
+- name: create nemo actions directory
+  ansible.builtin.file:
+    path: ~/.local/share/nemo/actions
+    state: directory
+
+- name: copy peazip nemo actions
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: ~/.local/share/nemo/actions/
+  loop:
+    - peazip-compress.nemo_action
+    - peazip-extract-here.nemo_action
+    - peazip-extract-smart-new-folder.nemo_action

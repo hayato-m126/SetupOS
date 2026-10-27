@@ -1,0 +1,10 @@
+[Nemo Action]
+Name=PeaZipで圧縮…
+Comment=選択したファイルやフォルダーを圧縮
+Exec=peazip -add2archive %F
+Icon-Name=peazip
+Selection=notnone
+Extensions=any;
+Quote=double
+Dependencies=peazip;
+UriScheme=file

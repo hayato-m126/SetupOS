@@ -1,0 +1,10 @@
+[Nemo Action]
+Name=PeaZipで展開(Smart new folder)
+Comment=選択した圧縮ファイルを同じ場所に展開
+Exec=peazip -ext2folder %F
+Icon-Name=peazip
+Selection=notnone
+Extensions=zip;zipx;7z;rar;tar;gz;bz2;xz;zst;tgz;tbz;tbz2;txz;tzst;pea;
+Quote=double
+Dependencies=peazip;
+UriScheme=file
